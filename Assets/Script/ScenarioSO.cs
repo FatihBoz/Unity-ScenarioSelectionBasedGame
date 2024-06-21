@@ -1,21 +1,42 @@
-using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Scenario" , menuName = "Scenario")]
+[CreateAssetMenu(fileName = "New Scenario", menuName = "Scenario")]
 public class ScenarioSO : ScriptableObject
 {
-    [SerializeField] private TextMeshProUGUI text;
+    #region TEXT
+    [TextArea][SerializeField] private string narratorText;
+    [TextArea][SerializeField] private string cardText;
+    [TextArea][SerializeField] private string backText;
+    #endregion
+
+    //!Rearrange these background things
+    #region Background Image 
+    [SerializeField] private bool changeBackground;  
+    [SerializeField] private Sprite backgroundImage;
+    #endregion 
+
+    #region OTHER
     [SerializeField] private Sprite image;
-    [SerializeField] private List<ScenarioSO> nextOoptions;
-    [SerializeField] private Reward reward;
+    [SerializeField] private List<ScenarioSO> nextOptions;
+    [SerializeField] private GameObject rewardPrefab;
+    #endregion
 
-    public List<ScenarioSO> GetNextOptions() { return nextOoptions; }
+    public List<ScenarioSO> GetNextOptions()
+    { return nextOptions; }
 
-    public Reward GetReward() { return reward;}
+    public string GetCardText()
+    { return cardText; }
 
-    public TextMeshProUGUI GetText() { return text;}
+    public GameObject GetRewardPrefab()
+    { return rewardPrefab; }
 
-    public Sprite GetSprite() { return image;}
+    public string GetNarratorText()
+    { return narratorText; }
+
+    public string GetBackText()
+    { return backText; }
+
+    public Sprite GetSprite()
+    { return image; }
 }

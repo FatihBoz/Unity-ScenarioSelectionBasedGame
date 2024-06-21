@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,13 +6,11 @@ using UnityEngine;
 public class ScenarioManager : MonoBehaviour
 {
     public static ScenarioManager instance;
+    public static Action<ScenarioSO> OnScenarioSelected;
 
     [SerializeField] private ScenarioSO startingScenario;
 
-    public delegate void ScenarioSelectedHandler(ScenarioSO scenario);
-    public static event ScenarioSelectedHandler OnScenarioSelected;
-
-
+    
     private void Awake()
     {
         if (instance != null)
