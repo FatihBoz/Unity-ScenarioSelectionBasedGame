@@ -6,6 +6,6 @@ public class LevelReward : MonoBehaviour, IReward
 {
     public void GetReward()
     {
-        Debug.Log("level");
+        PlayerAttributes.Instance.LevelUp();
     }
 }
