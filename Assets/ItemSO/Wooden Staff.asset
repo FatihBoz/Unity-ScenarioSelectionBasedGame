@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 589b1c72d37512943924120fe2e6e1a0, type: 3}
   m_Name: Wooden Staff
   m_EditorClassIdentifier: 
+  ItemExplanation: '?'
   itemName: Wooden Staff
   tier: 1
   itemSprite: {fileID: 21300000, guid: 97057ba1a0295a64dae97da2fa42e1ad, type: 3}
-  ItemExplanation: '?'
+  itemEffectPrefab: {fileID: 0}
+  color: {r: 0, g: 1, b: 0, a: 0.7490196}

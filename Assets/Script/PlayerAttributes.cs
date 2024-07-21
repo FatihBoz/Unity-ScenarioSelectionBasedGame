@@ -4,9 +4,9 @@ public class PlayerAttributes : MonoBehaviour
 {
     public static PlayerAttributes Instance;
 
-    [SerializeField] private float maxHp = 100f;
-    private float currentHp;
-    private int level;
+    public float MaxHp { get; private set; } = 100f;
+    public float CurrentHp { get; private set; }
+    public int Level { get; private set; }
 
     private void Awake()
     {
@@ -20,23 +20,28 @@ public class PlayerAttributes : MonoBehaviour
 
     private void Start()
     {
-        level = 1;
-        currentHp = maxHp;
+        Level = 1;
+        CurrentHp = MaxHp;
     }
 
     public void LevelUp()
     {
-        level++;
+        Level++;
     }
 
-    public void TakeDamage(float damageAmount)
+    public void PlayerAttributes_OnHealthDecreased(float damageAmount)
     {
-        currentHp -= damageAmount;
+        CurrentHp -= damageAmount;
     }
 
-    public int GetLevel() => level;
 
-    public float GetCurrentHp() => currentHp;
+    private void OnEnable()
+    {
+        EventManager<float>.Subscribe(EventKey.HEALTH_DECREASED, PlayerAttributes_OnHealthDecreased);
+    }
 
-    public float GetMaxHp() => maxHp;
+    private void OnDisable()
+    {
+        EventManager<float>.Unsubscribe(EventKey.HEALTH_DECREASED, PlayerAttributes_OnHealthDecreased);
+    }
 }

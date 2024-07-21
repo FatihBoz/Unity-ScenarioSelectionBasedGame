@@ -4,7 +4,6 @@ public class ItemAttributes : MonoBehaviour
 {
     public static ItemAttributes Instance;
 
-    private float luck; //additional chance to get high tier items
     private float damageReduction;
     private bool canBeRevived;
 
@@ -20,12 +19,21 @@ public class ItemAttributes : MonoBehaviour
 
     private void ResetAllAttributes()
     {
-        luck = 0f;
         damageReduction = 0f;
         canBeRevived = false;
     }
 
-    public float GetLuck() => luck;
+    public void SetDamageReduction(float damageReduction)
+    {
+        ResetAllAttributes();
+        this.damageReduction = damageReduction;
+    }
+
+    public void EscapeFromDeath()
+    {
+        ResetAllAttributes();
+        canBeRevived = true;
+    }
 
     public float GetDamageReduction() => damageReduction;
 

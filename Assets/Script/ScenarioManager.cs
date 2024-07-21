@@ -1,12 +1,9 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ScenarioManager : MonoBehaviour
 {
     public static ScenarioManager instance;
-    public static Action<ScenarioSO> OnScenarioSelected;
 
     [SerializeField] private ScenarioSO startingScenario;
 
@@ -29,6 +26,6 @@ public class ScenarioManager : MonoBehaviour
 
     public void SelectScenario(ScenarioSO scenario)
     {
-        OnScenarioSelected?.Invoke(scenario);
+        EventManager<ScenarioSO>.TriggerEvent(EventKey.SELECT_SCENARIO, scenario);
     }
 }

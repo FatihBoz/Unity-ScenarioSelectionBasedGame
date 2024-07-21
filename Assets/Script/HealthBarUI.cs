@@ -1,25 +1,25 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
-using DG.Tweening;
 
 public class HealthBarUI : MonoBehaviour
 {
     [SerializeField] private Image hpBar;
     [SerializeField] private float animationDuration = 1f;
 
+    //todo:given parameter is not being used.
+    private void HealthBarUI_OnHealthDecreased(float hp) 
+    {
+        hpBar.DOFillAmount(PlayerAttributes.Instance.CurrentHp / PlayerAttributes.Instance.MaxHp, animationDuration);
+    }
 
     private void OnEnable()
     {
-        HealthReward.OnHealthDecreased += HealthBarUI_OnHealthDecreased;
-    }
-
-    private void HealthBarUI_OnHealthDecreased()
-    {
-        hpBar.DOFillAmount(PlayerAttributes.Instance.GetCurrentHp()/PlayerAttributes.Instance.GetMaxHp(),animationDuration);
+        EventManager<float>.Subscribe(EventKey.HEALTH_DECREASED, HealthBarUI_OnHealthDecreased);
     }
 
     private void OnDisable()
     {
-        HealthReward.OnHealthDecreased -= HealthBarUI_OnHealthDecreased;
+        EventManager<float>.Unsubscribe(EventKey.HEALTH_DECREASED, HealthBarUI_OnHealthDecreased);
     }
 }

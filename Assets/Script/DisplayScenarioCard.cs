@@ -26,13 +26,16 @@ public class DisplayScenarioCard : MonoBehaviour
         }
     }
 
-    private void OnDisable()
-    {
-        ScenarioManager.OnScenarioSelected -= DisplayScenarioCard_OnScenarioSelected;
-    }
 
     private void OnEnable()
     {
-        ScenarioManager.OnScenarioSelected += DisplayScenarioCard_OnScenarioSelected;
+        EventManager<ScenarioSO>.Subscribe(EventKey.SELECT_SCENARIO, DisplayScenarioCard_OnScenarioSelected);
     }
+
+    private void OnDisable()
+    {
+        EventManager<ScenarioSO>.Unsubscribe(EventKey.SELECT_SCENARIO, DisplayScenarioCard_OnScenarioSelected);
+    }
+
+
 }

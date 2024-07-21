@@ -10,15 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2b1a98eb64d26d44f8738a83f8b57706, type: 3}
-  m_Name: ThirdScenario
+  m_Name: 12.1-13.1 This is what it should be -img
   m_EditorClassIdentifier: 
-  narratorText: 
-  cardText: Water
-  backText: 
-  image: {fileID: 21300000, guid: e4b23d51f40646e4b9381692bc463774, type: 3}
+  narratorText: 'The exam has begun. Each candidate must complete the
+
+    third
+    floor of the tower designed specifically for the exam.
+
+    You''re about to
+    enter the first floor.'
+  cardText: 'This is what
+
+    it should be'
+  backText: "Could you say\nthe same thing \nif you did not\ncome from a\ngreat family?"
+  image: {fileID: 0}
   nextOptions:
-  - {fileID: 11400000, guid: fff839fb788af9a4f960938020cd9cd1, type: 2}
-  - {fileID: 11400000, guid: bfecd4bd056cfb94e9913dfa6b67ec59, type: 2}
-  - {fileID: 11400000, guid: 78de037e0fa77e44ab1ab592fe8f913e, type: 2}
+  - {fileID: 11400000, guid: ee4737aa8ec182848be328f7436db373, type: 2}
   rewardPrefab: {fileID: 8120396705781388685, guid: 689267442ed72f844a4f745cf50991cf, type: 3}
-  changeBackground: 0

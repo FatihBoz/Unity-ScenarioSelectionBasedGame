@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 589b1c72d37512943924120fe2e6e1a0, type: 3}
   m_Name: Radiant Light Staff
   m_EditorClassIdentifier: 
-  itemName: Radiant Light Staff
-  tier: 3
-  itemSprite: {fileID: 21300000, guid: d63c1405cf420ae4eb2fe5ed93b48b29, type: 3}
   ItemExplanation: '?
 
 '
+  itemName: Radiant Light Staff
+  tier: 3
+  itemSprite: {fileID: 21300000, guid: d63c1405cf420ae4eb2fe5ed93b48b29, type: 3}
+  itemEffectPrefab: {fileID: 0}
+  color: {r: 1, g: 0.5, b: 1, a: 0.7490196}

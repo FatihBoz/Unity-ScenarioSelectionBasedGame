@@ -8,7 +8,7 @@ public class ItemReward : MonoBehaviour, IReward
 
     public void GetReward()
     {
-        Debug.Log(SelectItem().GetItemName());
+        EventManager<ItemSO>.TriggerEvent(EventKey.ITEM_FOUND, SelectItem());
     }
 
     private ItemSO SelectItem()
@@ -21,7 +21,7 @@ public class ItemReward : MonoBehaviour, IReward
     {
         for (int i = 0; i < _tierBoundaries.Length; i++)
         {
-            if (PlayerAttributes.Instance.GetLevel() <= _tierBoundaries[i])
+            if (PlayerAttributes.Instance.Level <= _tierBoundaries[i])
                 return i + 1;
         }
 

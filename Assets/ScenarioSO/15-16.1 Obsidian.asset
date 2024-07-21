@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2b1a98eb64d26d44f8738a83f8b57706, type: 3}
-  m_Name: SecondScenario
+  m_Name: 15-16.1 Obsidian
   m_EditorClassIdentifier: 
-  narratorText: 
-  cardText: Ice
-  backText: 
-  image: {fileID: 21300000, guid: 4313429f9e52f6347aea8005c9665464, type: 3}
-  nextOptions:
-  - {fileID: 11400000, guid: 78de037e0fa77e44ab1ab592fe8f913e, type: 2}
-  rewardPrefab: {fileID: 728901149430219561, guid: 697e7f57e69c76148b74f3dfef6257b8, type: 3}
-  changeBackground: 0
+  narratorText: 'Last question:'
+  cardText: Obsidian
+  backText: 'Your answer is
+
+    RIGHT'
+  image: {fileID: 21300000, guid: 7fd6096cc5a04064c8040cd800ec8d2d, type: 3}
+  nextOptions: []
+  rewardPrefab: {fileID: 6065419709317970287, guid: 79e5d141b12c56a458d3cc227b4d078e, type: 3}

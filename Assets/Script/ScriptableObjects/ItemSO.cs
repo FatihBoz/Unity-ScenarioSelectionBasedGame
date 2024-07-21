@@ -1,15 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Item", menuName = "Item")]
 public class ItemSO : ScriptableObject
 {
+    [TextArea][SerializeField] private string ItemExplanation;
     [SerializeField] private string itemName;
     [SerializeField] private int tier;
     [SerializeField] private Sprite itemSprite;
-    [TextArea][SerializeField] private string ItemExplanation;
+    [SerializeField] private GameObject itemEffectPrefab;
+    [SerializeField] private Color color;
+
 
     public string GetItemName() => itemName;
 
@@ -18,4 +18,8 @@ public class ItemSO : ScriptableObject
     public Sprite GetItemSprite() => itemSprite;
 
     public string GetItemExplanation() => ItemExplanation;
+
+    public GameObject GetItemEffectPrefab() => itemEffectPrefab; 
+
+    public Color GetColor() => color;
 }

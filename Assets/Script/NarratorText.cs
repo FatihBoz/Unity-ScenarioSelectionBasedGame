@@ -5,19 +5,18 @@ using UnityEngine;
 
 public class NarratorText : MonoBehaviour
 {
+    #region PUBLIC
     public float delayTime;
     public TextMeshProUGUI narratorText;
+    public float defaultPosY;
+    public float readyPosY;
+    #endregion
 
     private RectTransform rt;
 
     private void Awake()
     {
         rt = GetComponent<RectTransform>();
-    }
-
-    private void OnEnable()
-    {
-        ScenarioManager.OnScenarioSelected += NarratorText_OnScenarioSelected;
     }
 
     private void NarratorText_OnScenarioSelected(ScenarioSO scenario)
@@ -27,14 +26,19 @@ public class NarratorText : MonoBehaviour
 
     private IEnumerator AnimateNarratorText(ScenarioSO scenario)
     {
-        rt.DOAnchorPosY(128, 0.75f);
+        rt.DOAnchorPosY(defaultPosY, 0.75f);
         yield return new WaitForSeconds(delayTime);
         narratorText.text = scenario.GetNarratorText();
-        rt.DOAnchorPosY(-130, 0.75f);
+        rt.DOAnchorPosY(readyPosY, 0.75f);
+    }
+
+    private void OnEnable()
+    {
+        EventManager<ScenarioSO>.Subscribe(EventKey.SELECT_SCENARIO, NarratorText_OnScenarioSelected);
     }
 
     private void OnDisable()
     {
-        ScenarioManager.OnScenarioSelected -= NarratorText_OnScenarioSelected;
+        EventManager<ScenarioSO>.Unsubscribe(EventKey.SELECT_SCENARIO, NarratorText_OnScenarioSelected);
     }
 }
