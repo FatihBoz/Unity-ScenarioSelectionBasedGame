@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b1a98eb64d26d44f8738a83f8b57706, type: 3}
+  m_Name: 8.1 - 9.1 Water
+  m_EditorClassIdentifier: 
+  narratorText: 'Wind is the fastest element, although it has little damage.
+
+    You
+    learned that it is weak against fire, so what is it
+
+    strong against?'
+  cardText: Water
+  backText: 'Wrong.
+
+    -
+
+    Although wind is
+
+    weak against fire,
+
+    when
+    they combine
+
+    they unleash great
+
+    power.'
+  image: {fileID: 0}
+  nextOptions:
+  - {fileID: 11400000, guid: 5e3fe464fa903bf498e40cdf611989dd, type: 2}
+  - {fileID: 11400000, guid: ab08cdc06c1dc7347b363490687676bd, type: 2}
+  rewardPrefab: {fileID: 6065419709317970287, guid: 79e5d141b12c56a458d3cc227b4d078e, type: 3}

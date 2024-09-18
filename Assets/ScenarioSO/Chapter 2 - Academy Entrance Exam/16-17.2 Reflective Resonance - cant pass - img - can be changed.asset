@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b1a98eb64d26d44f8738a83f8b57706, type: 3}
+  m_Name: 16-17.2 Reflective Resonance - cant pass - img - can be changed
+  m_EditorClassIdentifier: 
+  narratorText: 
+  cardText: 'Reflective
+
+    Resonance'
+  backText: 'Your answer is
+
+    FALSE
+
+    -
+
+    You did not pass
+
+    the theoratical
+    part.
+
+    But you still
+
+    have a chance
+
+    to pass the
+
+    exam in practice
+
+    part.'
+  image: {fileID: 0}
+  nextOptions: []
+  rewardPrefab: {fileID: 6065419709317970287, guid: 79e5d141b12c56a458d3cc227b4d078e, type: 3}

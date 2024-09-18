@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 589b1c72d37512943924120fe2e6e1a0, type: 3}
   m_Name: Wand of Sorcerer
   m_EditorClassIdentifier: 
-  ItemExplanation: '?'
+  itemExplanation: 'Recovers %20 health in every certain
+
+    number of choices.'
+  itemSprite: {fileID: 21300000, guid: 342119c33a7d8444dafab9aadcd43c43, type: 3}
   itemName: Wand of Sorcerer
   tier: 2
-  itemSprite: {fileID: 21300000, guid: 342119c33a7d8444dafab9aadcd43c43, type: 3}
-  itemEffectPrefab: {fileID: 0}
+  itemEffectPrefab: {fileID: 1832665921452237, guid: 0e6d06a40cf4bd64492bdb838310e1ea, type: 3}
   color: {r: 0, g: 1, b: 1, a: 0.7490196}

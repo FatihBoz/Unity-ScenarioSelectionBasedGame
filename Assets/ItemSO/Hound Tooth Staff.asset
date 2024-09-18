@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 589b1c72d37512943924120fe2e6e1a0, type: 3}
   m_Name: Hound Tooth Staff
   m_EditorClassIdentifier: 
-  ItemExplanation: '?'
+  itemExplanation: 'Reduces the damage you take
+
+    by %10.'
+  itemSprite: {fileID: 21300000, guid: 149420bef748fa64cb1049bc5acb76f7, type: 3}
   itemName: Hound Tooth Staff
   tier: 1
-  itemSprite: {fileID: 21300000, guid: 149420bef748fa64cb1049bc5acb76f7, type: 3}
-  itemEffectPrefab: {fileID: 0}
+  itemEffectPrefab: {fileID: 2489174571679080812, guid: 08e77c76bd0d5904592a82b70fdc7427, type: 3}
   color: {r: 0, g: 1, b: 0, a: 0.7490196}

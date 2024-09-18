@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 5944e287fd4323f4c87a63c3e2196877
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - canvas: {instanceID: 0}
+  - spawnPoint: {instanceID: 0}
+  - fireExplosion: {instanceID: 0}
+  - waterExplosion: {instanceID: 0}
+  - windExplosion: {instanceID: 0}
+  - earthExplosion: {instanceID: 0}
+  - fireSkill: {instanceID: 0}
+  - waterSkill: {instanceID: 0}
+  - windSkill: {instanceID: 0}
+  - earthSkill: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

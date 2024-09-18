@@ -12,11 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 589b1c72d37512943924120fe2e6e1a0, type: 3}
   m_Name: Staff of Withered Flowers
   m_EditorClassIdentifier: 
-  ItemExplanation: '?
-
-'
+  itemExplanation: "Nullifies the damage you take\r\nwith %10 chance.\r"
+  itemSprite: {fileID: 21300000, guid: 2a87853d4d3b13443b3d0e606d8c7066, type: 3}
   itemName: Staff of Withered Flowers
   tier: 1
-  itemSprite: {fileID: 21300000, guid: 2a87853d4d3b13443b3d0e606d8c7066, type: 3}
-  itemEffectPrefab: {fileID: 0}
+  itemEffectPrefab: {fileID: 5036035421081350488, guid: 22a566953d07ec5459c0e00a2f500b0c, type: 3}
   color: {r: 0, g: 1, b: 0, a: 0.7490196}

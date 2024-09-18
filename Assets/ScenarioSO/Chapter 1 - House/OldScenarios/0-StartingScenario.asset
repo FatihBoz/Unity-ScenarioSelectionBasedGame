@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b1a98eb64d26d44f8738a83f8b57706, type: 3}
+  m_Name: 0-StartingScenario
+  m_EditorClassIdentifier: 
+  narratorText: 'You were born into the most powerful and wealthy
+
+    magician family
+    in the capital as the only family member to
+
+    have white hair for centuries.
+    This brought to mind a prophecy
+
+    passed down in the family for a thousand
+    years.'
+  cardText: 
+  backText: 
+  image: {fileID: 0}
+  nextOptions:
+  - {fileID: 11400000, guid: 78de037e0fa77e44ab1ab592fe8f913e, type: 2}
+  - {fileID: 11400000, guid: 8a9a9ca857776a045a9096cbcea3311b, type: 2}
+  rewardPrefab: {fileID: 6065419709317970287, guid: 79e5d141b12c56a458d3cc227b4d078e, type: 3}
+  location: 2
+  hasEnemy: 0
+  enemy: {fileID: 0}
