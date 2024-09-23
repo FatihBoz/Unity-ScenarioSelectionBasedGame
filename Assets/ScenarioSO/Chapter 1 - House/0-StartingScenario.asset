@@ -12,16 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b1a98eb64d26d44f8738a83f8b57706, type: 3}
   m_Name: 0-StartingScenario
   m_EditorClassIdentifier: 
-  narratorText: 'You were born into the most powerful and wealthy
-
-    magician family
-    in the capital as the only family member to
-
-    have white hair for centuries.
-    This brought to mind a prophecy
-
-    passed down in the family for a thousand
-    years.'
+  narratorText: "In the southern reaches of the kingdom of Everwyn, where\nthe ancient
+    forest whispers among the tall trees, stands\nthe impregnable stronghold of House
+    Deymar, a baby's\n cry rising from within.\r\n"
   cardText: 
   backText: 
   image: {fileID: 0}

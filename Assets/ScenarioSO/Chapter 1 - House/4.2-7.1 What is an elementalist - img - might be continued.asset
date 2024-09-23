@@ -40,3 +40,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8a9a9ca857776a045a9096cbcea3311b, type: 2}
   rewardPrefab: {fileID: 6065419709317970287, guid: 79e5d141b12c56a458d3cc227b4d078e, type: 3}
   location: 1
+  hasEnemy: 0
+  enemy: {fileID: 0}

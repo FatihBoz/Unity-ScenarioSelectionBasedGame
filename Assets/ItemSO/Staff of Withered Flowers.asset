@@ -15,6 +15,7 @@ MonoBehaviour:
   itemExplanation: "Nullifies the damage you take\r\nwith %10 chance.\r"
   itemSprite: {fileID: 21300000, guid: 2a87853d4d3b13443b3d0e606d8c7066, type: 3}
   itemName: Staff of Withered Flowers
+  value: 0
+  itemQuality: 1
   tier: 1
   itemEffectPrefab: {fileID: 5036035421081350488, guid: 22a566953d07ec5459c0e00a2f500b0c, type: 3}
-  color: {r: 0, g: 1, b: 0, a: 0.7490196}

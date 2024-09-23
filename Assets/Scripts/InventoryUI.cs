@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,66 +8,91 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] private Transform staffInventoryUI;
     [SerializeField] private Transform lootItemInventoryUI;
 
+    [Header("Prefabs")]
     [SerializeField] private GameObject itemSlotPrefab;
     [SerializeField] private GameObject staffSlotPrefab;
 
-    public GameObject envanter;
+    [Header("Equipped Staff")]
+    [SerializeField] private Image equippedStaffImage;
+    [SerializeField] private TextMeshProUGUI equippedStaffName;
+    [SerializeField] private TextMeshProUGUI equippedStaffExplanation;
 
-    private void InventoryUI_OnStaffInventoryUpdated(List<StaffSO> list)
+    [SerializeField] private Canvas canvas;
+    [SerializeField] private GameObject inventory;
+
+    private void InventoryUI_OnStaffInventoryUpdated(Dictionary<StaffSO, int> dict)
     {
         //Clear staff inventory
-        foreach(Transform staff in staffInventoryUI)
+        foreach (Transform staff in staffInventoryUI)
         {
             Destroy(staff.gameObject);
         }
-        
-        
-        foreach (StaffSO staff in list)
+
+        foreach (StaffSO staff in dict.Keys)
         {
             GameObject obj = Instantiate(staffSlotPrefab, staffInventoryUI);
-            if(obj.transform.Find("StaffImage").TryGetComponent<Image>(out var image))
+            if (obj.TryGetComponent<ItemSlot>(out var itemSlot))
             {
-                image.sprite = staff.ItemSprite; 
+                itemSlot.SetItem(staff, dict[staff]);
+                itemSlot.SetCanvas(canvas);
             }
         }
     }
 
-    private void InventoryUI_OnLootItemInventoryUpdated(Dictionary<LootItemSO, int> dict)
+    private void InventoryUI_OnLootItemInventoryUpdated(Dictionary<ItemSO, int> dict)
     {
-        //Clear staff inventory
-        foreach (Transform item in staffInventoryUI)
+        //Clear loot item inventory
+        foreach (Transform item in lootItemInventoryUI)
         {
             Destroy(item.gameObject);
         }
 
-
-        foreach (LootItemSO item in dict.Keys)
+        foreach (ItemSO item in dict.Keys)
         {
             GameObject obj = Instantiate(itemSlotPrefab, lootItemInventoryUI);
             if (obj.TryGetComponent<ItemSlot>(out var itemSlot))
             {
-                itemSlot.ItemImage.sprite = item.ItemSprite;
-                itemSlot.Count.text = item.ItemCount.ToString();
+                itemSlot.SetItem(item, dict[item]);
+                itemSlot.SetCanvas(canvas);
             }
         }
     }
 
 
-    public void EnvanterAc()
+    private void InventoryUI_OnEquippedStaffChanged(StaffSO staff)
     {
-        envanter.SetActive(true);
+        equippedStaffImage.sprite = staff.ItemSprite;
+        equippedStaffName.text = staff.ItemName;
+        equippedStaffName.color = ItemQualityColor.GetColor(staff.ItemQuality);
+        equippedStaffExplanation.text = staff.ItemExplanation;
+
+        if (!equippedStaffImage.IsActive())
+        {
+            equippedStaffImage.gameObject.SetActive(true);
+        }
     }
 
+
+
+    public void Open_Close_Inventory()
+    {
+        //if object is not active, make it active and vice versa
+        inventory.SetActive(!inventory.activeSelf);
+    }
 
     private void OnEnable()
     {
-        EventManager<Dictionary<LootItemSO, int>>.Subscribe(EventKey.LootItem_Inventory_Update, InventoryUI_OnLootItemInventoryUpdated);
-        EventManager<List<StaffSO>>.Subscribe(EventKey.Staff_Inventory_Update, InventoryUI_OnStaffInventoryUpdated);
+        EventManager<Dictionary<ItemSO, int>>.Subscribe(EventKey.LootItem_Inventory_Update, InventoryUI_OnLootItemInventoryUpdated);
+        EventManager<Dictionary<StaffSO,int>>.Subscribe(EventKey.Staff_Inventory_Update, InventoryUI_OnStaffInventoryUpdated);
+        EventManager<StaffSO>.Subscribe(EventKey.Equipped_Staff_Changed, InventoryUI_OnEquippedStaffChanged);
     }
+
+
 
     private void OnDisable()
     {
-        EventManager<Dictionary<LootItemSO, int>>.Unsubscribe(EventKey.LootItem_Inventory_Update, InventoryUI_OnLootItemInventoryUpdated);
-        EventManager<List<StaffSO>>.Unsubscribe(EventKey.Staff_Inventory_Update, InventoryUI_OnStaffInventoryUpdated);
+        EventManager<Dictionary<ItemSO, int>>.Unsubscribe(EventKey.LootItem_Inventory_Update, InventoryUI_OnLootItemInventoryUpdated);
+        EventManager<Dictionary<StaffSO, int>>.Unsubscribe(EventKey.Staff_Inventory_Update, InventoryUI_OnStaffInventoryUpdated);
+        EventManager<StaffSO>.Unsubscribe(EventKey.Equipped_Staff_Changed, InventoryUI_OnEquippedStaffChanged);
     }
 }

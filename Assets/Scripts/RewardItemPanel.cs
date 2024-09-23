@@ -29,9 +29,9 @@ public class RewardItemPanel : MonoBehaviour
         SetItemPanelInactive();
     }
 
-    public void OnEquipButtonPressed()
+    public void OnTakeButtonPressed()
     {
-        EventManager<StaffSO>.TriggerEvent(EventKey.STAFF_EQUIPPED, currentItem);
+        EventManager<ItemSO>.TriggerEvent(EventKey.ITEM_TAKEN, currentItem);
         SetItemPanelInactive();
     }
 
@@ -39,13 +39,14 @@ public class RewardItemPanel : MonoBehaviour
     {
         itemName.text = item.ItemName;
         itemExplanation.text = item.ItemExplanation;
-        backgroundColor.color = item.GetColor();
+        backgroundColor.color = ItemQualityColor.GetColor(item.ItemQuality);
         itemImage.sprite = item.ItemSprite;
         itemImage.SetNativeSize();
     }
 
     private void SetItemPanelInactive()
     {
+        transform.DOKill();
         backgroundPanel.SetActive(false);
         gameObject.transform.localScale = Vector3.zero;
     }

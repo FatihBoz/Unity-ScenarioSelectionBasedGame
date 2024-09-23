@@ -17,6 +17,7 @@ MonoBehaviour:
     by %20.'
   itemSprite: {fileID: 21300000, guid: a14db73ec9eeba348866216adc72c9c6, type: 3}
   itemName: Sunfire Serpent Staff
+  value: 0
+  itemQuality: 2
   tier: 2
   itemEffectPrefab: {fileID: 2489174571679080812, guid: 08e77c76bd0d5904592a82b70fdc7427, type: 3}
-  color: {r: 0, g: 1, b: 1, a: 0.7490196}

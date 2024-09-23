@@ -15,6 +15,7 @@ MonoBehaviour:
   itemExplanation: "Nullifies the damage you take\r\nwith %40 chance.\r"
   itemSprite: {fileID: 21300000, guid: 47b43dd5b7f3e734583c1189fa114c64, type: 3}
   itemName: Staff of the Hidden Realm
+  value: 0
+  itemQuality: 4
   tier: 4
   itemEffectPrefab: {fileID: 5036035421081350488, guid: 22a566953d07ec5459c0e00a2f500b0c, type: 3}
-  color: {r: 1, g: 0, b: 0, a: 1}

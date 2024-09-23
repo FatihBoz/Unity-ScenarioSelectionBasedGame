@@ -1,15 +1,15 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class Inventory : MonoBehaviour
 {
     [SerializeField] private int maxStaffSlot;
     [SerializeField] private int maxLootItemSlot;
 
-    private Dictionary<LootItemSO, int> itemInventory;
-    private List<StaffSO> staffInventory;
+    private Dictionary<ItemSO, int> itemInventory;
+    private Dictionary<StaffSO,int> staffInventory;
+    private StaffSO currentlyEquippedStaff;
 
     private void Awake()
     {
@@ -17,86 +17,132 @@ public class Inventory : MonoBehaviour
         staffInventory = new(maxStaffSlot);
     }
 
-    public void AddLootItem(LootItemSO newItem, int count)
+    public void AddItem(ItemSO item, int count = 1)
     {
-        if (itemInventory.Count < maxLootItemSlot)
+        // Check if the item is a StaffSO
+        if (item is StaffSO staff)
         {
-            return;
-        }
-
-
-        if (itemInventory.ContainsKey(newItem))
-        {
-            itemInventory[newItem] += count;
+            AddItemToInventory(staff, staffInventory,maxStaffSlot,count);
+            UpdateStaffUI();
         }
         else
         {
-            itemInventory.Add(newItem, count);
-            //Update UI
-            EventManager<Dictionary<LootItemSO, int>>.
-                TriggerEvent(EventKey.LootItem_Inventory_Update, itemInventory);
+            AddItemToInventory(item, itemInventory, maxLootItemSlot,count);
+            UpdateLootItemUI();
+        }
+    }
+    
+    public void RemoveItem(ItemSO item)
+    {
+        if (item is StaffSO staff)
+        {
+            RemoveItemFromInventory(staff,staffInventory);
+            UpdateStaffUI();
+        }
+        else
+        {
+            RemoveItemFromInventory(item, itemInventory);
+            UpdateLootItemUI();
+        }
+    }
+    
+
+
+    void AddItemToInventory<T>(T item, Dictionary<T,int> inventory,int maxSlotCount,int count = 1)
+    {
+        if (inventory.Count >= maxSlotCount)
+            return;
+
+
+        if (inventory.ContainsKey(item))
+        {
+            inventory[item] += count;
+        }
+        // If the item does not exist, add it with the specified count
+        else
+        {
+            inventory[item] = count;
+        }
+
+    }
+
+
+
+    void RemoveItemFromInventory<T>(T item, Dictionary<T, int> inventory, int count = 1)
+    {
+        if (!inventory.ContainsKey(item))
+            return;
+
+        // If only a certain part of the items will be deleted
+        if (inventory[item] > count)
+        {
+            inventory[item] -= count;
+        }
+        // If the whole item will be deleted
+        else if (inventory[item] <= count)
+        {
+            inventory.Remove(item);
         }
     }
 
-    public void AddStaff(StaffSO staff)
+
+    private void UpdateStaffUI()
     {
-        if (staffInventory.Count < maxStaffSlot)
-        {
-            staffInventory.Add(staff);
-            //Update UI
-            EventManager<List<StaffSO>>.
-                TriggerEvent(EventKey.Staff_Inventory_Update,staffInventory);
-        }
+        EventManager<Dictionary<StaffSO,int>>.TriggerEvent(EventKey.Staff_Inventory_Update, staffInventory);
+    }
+
+    private void UpdateLootItemUI()
+    {
+        EventManager<Dictionary<ItemSO, int>>.TriggerEvent(EventKey.LootItem_Inventory_Update, itemInventory);
     }
 
 
-
-
-    public void RemoveStaff(StaffSO staff)
+    private void InventoryManager_OnItemTaken(ItemSO item)
     {
-        if (staffInventory.Contains(staff))
-        {
-            staffInventory.Remove(staff);
-            //Update UI
-            EventManager<List<StaffSO>>.
-                TriggerEvent(EventKey.Staff_Inventory_Update, staffInventory);
-        }
+        AddItem(item);
     }
 
-    public void RemoveLootItem(LootItemSO lootItem,int count)
+    private void InventoryUI_OnItemDropped(ItemSO item)
     {
-        //if only a certain part of the items will be deleted
-        if (itemInventory[lootItem] > count)
-        {
-            itemInventory[lootItem] -= count;
-        }
-        //if whole item will be deleted
-        else if (itemInventory[lootItem] == count)
-        {
-            itemInventory.Remove(lootItem);
-            //Update UI
-            EventManager<Dictionary<LootItemSO, int>>.
-                TriggerEvent(EventKey.LootItem_Inventory_Update, itemInventory);
-        }
+        RemoveItem(item);
     }
 
 
 
     private void InventoryManager_OnStaffEquipped(StaffSO staff)
     {
-        AddStaff(staff);
+        if (currentlyEquippedStaff != null)
+        {
+            StaffSO previousStaff = currentlyEquippedStaff;
+            currentlyEquippedStaff = staff;
+            RemoveItem(staff);
+            //if inventory still does not have empty slot,
+            //previous staff will be deleted.
+            AddItem(previousStaff);
+            
+        }
+        else
+        {
+            RemoveItem(staff);
+            currentlyEquippedStaff = staff;
+        }
+        
+        UpdateEquippedStaffUI();
     }
 
-    private void InventoryManager_OnLootItemFound(LootItemSO item)
+    void UpdateEquippedStaffUI()
     {
-        AddLootItem(item, 1);
+        EventManager<StaffSO>.TriggerEvent(EventKey.Equipped_Staff_Changed, currentlyEquippedStaff);
     }
+
+
 
     private void OnEnable()
     {
         EventManager<StaffSO>.Subscribe(EventKey.STAFF_EQUIPPED, InventoryManager_OnStaffEquipped);
-        EventManager<LootItemSO>.Subscribe(EventKey.LOOT_ITEM_FOUND, InventoryManager_OnLootItemFound);
-        
+        EventManager<ItemSO>.Subscribe(EventKey.ITEM_TAKEN, InventoryManager_OnItemTaken);
+        EventManager<ItemSO>.Subscribe(EventKey.ITEM_DROPPED, InventoryUI_OnItemDropped);
+
     }
 
 
@@ -104,6 +150,7 @@ public class Inventory : MonoBehaviour
     private void OnDisable()
     {
         EventManager<StaffSO>.Unsubscribe(EventKey.STAFF_EQUIPPED, InventoryManager_OnStaffEquipped);
-        EventManager<LootItemSO>.Unsubscribe(EventKey.LOOT_ITEM_FOUND, InventoryManager_OnLootItemFound);
+        EventManager<ItemSO>.Unsubscribe(EventKey.ITEM_TAKEN, InventoryManager_OnItemTaken);
+        EventManager<ItemSO>.Unsubscribe(EventKey.ITEM_DROPPED, InventoryUI_OnItemDropped);
     }
 }

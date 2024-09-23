@@ -17,6 +17,7 @@ MonoBehaviour:
     number of choices.'
   itemSprite: {fileID: 21300000, guid: 97057ba1a0295a64dae97da2fa42e1ad, type: 3}
   itemName: Wooden Staff
+  value: 0
+  itemQuality: 1
   tier: 1
   itemEffectPrefab: {fileID: 1832665921452237, guid: 0e6d06a40cf4bd64492bdb838310e1ea, type: 3}
-  color: {r: 0, g: 1, b: 0, a: 0.7490196}

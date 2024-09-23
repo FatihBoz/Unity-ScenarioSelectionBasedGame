@@ -17,6 +17,7 @@ MonoBehaviour:
     by %30.'
   itemSprite: {fileID: 21300000, guid: fd64ad9af16611e4fb8dffd3cb09fb4f, type: 3}
   itemName: Staff of the Grand Mage
+  value: 0
+  itemQuality: 3
   tier: 3
   itemEffectPrefab: {fileID: 2489174571679080812, guid: 08e77c76bd0d5904592a82b70fdc7427, type: 3}
-  color: {r: 1, g: 0.5, b: 1, a: 0.7490196}

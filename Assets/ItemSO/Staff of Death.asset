@@ -17,6 +17,7 @@ MonoBehaviour:
     for once.'
   itemSprite: {fileID: 21300000, guid: ad95d307c6c5c7b46a5ff348b6ad0116, type: 3}
   itemName: Staff of Death
+  value: 0
+  itemQuality: 4
   tier: 4
   itemEffectPrefab: {fileID: 1934668450534516667, guid: 4fc17a432180e5d4e8ed0ab52df394ea, type: 3}
-  color: {r: 1, g: 0, b: 0, a: 1}
