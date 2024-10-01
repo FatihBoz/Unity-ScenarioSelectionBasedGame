@@ -7,13 +7,14 @@ public class MiniGameCombatManager : MonoBehaviour
     public static MiniGameCombatManager Instance;
     //!Initially, queues were used, but since skills had different speeds,
     //!it was necessary to dynamically sort them, so we turned to List.
-    public List<SkillIcon> playerQ = new();
+    private List<SkillIcon> playerQ = new();
 
-    public List<SkillIcon> enemyQ = new();
+    private List<SkillIcon> enemyQ = new();
 
     private Canvas canvas;
 
     private ElementalStrength elementalStrength;
+
 
 
     private void Awake()
@@ -37,13 +38,16 @@ public class MiniGameCombatManager : MonoBehaviour
     private void FixedUpdate()
     {
         CheckCollisions();
-        UpdatePlayerList();
+        UpdateSkillLists();
     }
 
 
-    void UpdatePlayerList()
+    void UpdateSkillLists()
     {
+        //higher y position comes first
         playerQ.Sort((a, b) => b.RectTransform.anchoredPosition.y.CompareTo(a.RectTransform.anchoredPosition.y));
+        //Lower y position comes first
+        enemyQ.Sort((a,b) => a.RectTransform.anchoredPosition.y.CompareTo(b.RectTransform.anchoredPosition.y));
     }
 
 
@@ -136,5 +140,12 @@ public class MiniGameCombatManager : MonoBehaviour
         Destroy(explosion, .5f);
     }
 
+    public void AddSkillIcon(SkillIcon skill)
+    {
+        playerQ.Add(skill);
+    }
 
+    public List<SkillIcon> PlayerQ => playerQ;
+
+    public List<SkillIcon> EnemyQ => enemyQ;
 }

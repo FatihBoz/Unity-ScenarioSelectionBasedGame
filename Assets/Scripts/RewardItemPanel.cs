@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class RewardItemPanel : MonoBehaviour
 {
-    private StaffSO currentItem;
+    private ItemSO currentItem;
 
     #region ITEM ELEMENTS
 
@@ -17,7 +17,7 @@ public class RewardItemPanel : MonoBehaviour
 
     #endregion ITEM ELEMENTS
 
-    private void RewardItemPanel_OnItemFound(StaffSO item)
+    private void RewardItemPanel_OnItemFound(ItemSO item)
     {
         currentItem = item;
         DisplayItem(item);
@@ -35,7 +35,7 @@ public class RewardItemPanel : MonoBehaviour
         SetItemPanelInactive();
     }
 
-    private void DisplayItem(StaffSO item)
+    private void DisplayItem(ItemSO item)
     {
         itemName.text = item.ItemName;
         itemExplanation.text = item.ItemExplanation;
@@ -59,11 +59,11 @@ public class RewardItemPanel : MonoBehaviour
 
     private void OnEnable()
     {
-        EventManager<StaffSO>.Subscribe(EventKey.STAFF_FOUND, RewardItemPanel_OnItemFound);
+        EventManager<ItemSO>.Subscribe(EventKey.STAFF_FOUND, RewardItemPanel_OnItemFound);
     }
 
     private void OnDisable()
     {
-        EventManager<StaffSO>.Unsubscribe(EventKey.STAFF_FOUND, RewardItemPanel_OnItemFound);
+        EventManager<ItemSO>.Unsubscribe(EventKey.STAFF_FOUND, RewardItemPanel_OnItemFound);
     }
 }

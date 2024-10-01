@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System.Collections;
 using UnityEngine;
 
 public class EnemyCombat : Combat
@@ -6,42 +7,139 @@ public class EnemyCombat : Combat
     [Header("ENEMY")]
     [SerializeField] private EnemySO enemy;
 
+    [Header("COMBAT VALUES ")]
     [SerializeField] private float weaknessMultiplier;
     [SerializeField] private float resistanceMultiplier;
 
+    private readonly float timeBetweenConsecutiveSkills = .4f;
+    private readonly float timeToStartCombat = 2f;
+
     private float currentHp;
+    private float currentMana;
+    private bool canUseSkill;
+    private EnemyState enemyState;
 
     private void Start()
     {
-        EventManager<EnemySO>.TriggerEvent(EventKey.ENEMY_FOUND, enemy);
+        currentHp = enemy.MaxHp;
+        currentMana = enemy.MaxMana;
 
-        if (enemy != null)
+        Invoke(nameof(StartCombat), timeToStartCombat);
+    }
+
+    void StartCombat()
+    {
+        canUseSkill = true;
+    }
+
+    private void FixedUpdate()
+    {
+        RegenerateMana();
+
+        if (!canUseSkill)
         {
-            InvokeRepeating(nameof(CastSkill), .2f, 2f);
+            return;
         }
 
+        DetermineEnemyState();
+
+        ActAccordingToState();
     }
+
+    void ActAccordingToState()
+    {
+        switch (enemyState)
+        {
+            case EnemyState.Aggresive:
+                StartCoroutine(
+                    ConsecutiveSkillCasting(Random.Range(2,3)));
+                break;
+
+            case EnemyState.Defensive:
+                StartCoroutine(
+                    ConsecutiveSkillCasting(SkillCountDifference())
+                    );
+                break;
+        }
+    }
+
+    void DetermineEnemyState()
+    {
+        if (MiniGameCombatManager.Instance.PlayerQ.Count > 0)
+        {
+            enemyState = EnemyState.Defensive;
+        }
+        else if (currentMana >= enemy.MaxMana * enemy.ManaPercentageThresholdForCombo)
+        {
+            //print(currentMana);
+            enemyState = EnemyState.Aggresive;
+        }
+        else
+        {
+            enemyState = EnemyState.ManaRecovery;
+        }
+        
+    }
+
+    int SkillCountDifference()
+    {
+        int diff = MiniGameCombatManager.Instance.PlayerQ.Count - MiniGameCombatManager.Instance.EnemyQ.Count;
+
+        return Mathf.Max(0,diff);
+    }
+
+    protected override void RegenerateMana()
+    {
+        currentMana += enemy.ManaRegenPerSecond * Time.fixedDeltaTime;
+        //Limits mana between specified values
+        currentMana = Mathf.Clamp(currentMana, 0, enemy.MaxMana);
+    }
+
+
+
+    private IEnumerator ConsecutiveSkillCasting(int repeatCount)
+    {//Start of consecutive skill casting
+        canUseSkill = false;
+        int counter = 0;
+
+        while (counter < repeatCount)
+        {
+            CastSkill();
+            counter++;
+            yield return new WaitForSeconds(timeBetweenConsecutiveSkills);
+        }
+        //END
+        canUseSkill = true;
+    }
+
 
     private void CastSkill()
     {
-        GameObject obj = Instantiate(skillIcon, spawnPoint.position, Quaternion.identity, spawnPoint);
-        //choose a random skill enemy have
         int r = Random.Range(0, enemy.Skills.Count);
 
-        Skill newSkill = new(enemy.Skills[r]);
+        Skill newSkill = new(enemy.Skills[r]);  
 
+        if (currentMana < newSkill.ManaToCast)
+        {
+            return;
+        }
+        
+        currentMana -= newSkill.ManaToCast;
+
+        GameObject obj = Instantiate(skillIcon, spawnPoint.position, Quaternion.identity, spawnPoint);
+        //choose a random skill enemy have
         MiniGameCombatUI.Instance.AddSkill(newSkill);
 
         if (obj.TryGetComponent<RectTransform>(out var rect))
         {
-            //if it is not null , make it move
+            //make it move
             rect.DOAnchorPos(destination, 1 / newSkill.Speed)
                 //Ensure that it is moving with constant velocity
                 .SetEase(Ease.Linear)
 
                 .OnComplete(() => OnSkillMovementFinished(rect, newSkill));
 
-            MiniGameCombatManager.Instance.enemyQ.Add(new SkillIcon(newSkill, rect));
+            MiniGameCombatManager.Instance.EnemyQ.Add(new SkillIcon(newSkill, rect));
         }
         //Call a method to set image to skill icon from super class
         SetImage(obj, newSkill);
@@ -50,10 +148,10 @@ public class EnemyCombat : Combat
     protected override void OnSkillMovementFinished(RectTransform skillIcon, Skill skill)
     {
         base.OnSkillMovementFinished(skillIcon, skill);
+        //Remove skill from the skill list
+        MiniGameCombatManager.Instance.EnemyQ.RemoveAt(0);
         //Remove Skill text
         MiniGameCombatUI.Instance.RemoveSkill(skill);
-        //Remove skill from the skill list
-        MiniGameCombatManager.Instance.enemyQ.RemoveAt(0);
         //Skill reached enemy side
         EventManager<float>.TriggerEvent(EventKey.MiniGameCombat_Player_TakeDamage, skill.Damage);
     }
@@ -77,21 +175,18 @@ public class EnemyCombat : Combat
 
 
         //Update UI
-        MiniGameCombatUI.Instance.EnemyTakeDamage(currentHp / enemy.MaxHp);
-    }
-
-
-    private void OnEnable()
-    {
-        currentHp = enemy.MaxHp;
-
-        EventManager<EnemySO>.Subscribe(EventKey.ENEMY_FOUND, EnemyCombat_OnEnemyFound);
-        EventManager<Skill>.Subscribe(EventKey.MiniGameCombat_Enemy_TakeDamage, EnemyCombat_OnEnemyTakeDamage);
+        MiniGameCombatUI.Instance.UpdateEnemyHealthBar(currentHp / enemy.MaxHp);
     }
 
     private void EnemyCombat_OnEnemyFound(EnemySO enemySO)
     {
         enemy = enemySO;
+    }
+
+    private void OnEnable()
+    {
+        EventManager<EnemySO>.Subscribe(EventKey.ENEMY_FOUND, EnemyCombat_OnEnemyFound);
+        EventManager<Skill>.Subscribe(EventKey.MiniGameCombat_Enemy_TakeDamage, EnemyCombat_OnEnemyTakeDamage);
     }
 
     private void OnDisable()
@@ -102,4 +197,11 @@ public class EnemyCombat : Combat
     }
 
 
+}
+
+public enum EnemyState
+{
+    ManaRecovery, //Active at low mana, waiting its mana to fill while using skills one by one with certain time intervals 
+    Defensive, //Matching player skills
+    Aggresive //using multiple skill at high mana
 }

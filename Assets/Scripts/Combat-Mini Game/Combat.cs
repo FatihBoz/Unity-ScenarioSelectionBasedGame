@@ -27,18 +27,12 @@ public abstract class Combat : MonoBehaviour
 
         if (explosionPrefab != null)
         {
-
-            if(canvas == null)
-            {
-                print("e null deðil");
-            }
             GameObject explosion = Instantiate(skill.ExplosionPrefab, skillIcon.position, Quaternion.identity, canvas.transform);
             
             Destroy(explosion,destroyTime);
             ScreenShake.Instance.Shake();
         }
 
-        
         Destroy(skillIcon.gameObject);
     }
 
@@ -57,5 +51,7 @@ public abstract class Combat : MonoBehaviour
             }
         }
     }
+
+    protected abstract void RegenerateMana();
 
 }

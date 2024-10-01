@@ -1,28 +1,47 @@
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "New Item", menuName = "Item")]
 public class ItemSO : ScriptableObject
 {
-    [TextArea]
-    [SerializeField] protected string itemExplanation;
+    [Header("TEXT")]
+    [TextArea][SerializeField] private string itemExplanation;
 
-    [SerializeField] protected Sprite itemSprite;
-
-    [SerializeField] protected string itemName; 
-    
-    [SerializeField] private int value;
-
-    [SerializeField] protected ItemQuality itemQuality;
+    [SerializeField] private string itemName;
 
 
-    public int Value { get => value; set => this.value = value; }
+    [Header("INTEGER VALUES")]
+    [SerializeField] private int tier;
 
-    public string ItemName { get => itemName; set => itemName = value; }
+
+    [Header("OTHER")]
+    [SerializeField] private Sprite itemSprite;
+
+    [SerializeField] private GameObject itemEffectPrefab;
+
+    [SerializeField] private ItemType itemType;
+
+
+
+    public string ItemName { get => itemName; }
 
     public Sprite ItemSprite { get => itemSprite; }
 
-    public string ItemExplanation { get => itemExplanation; set => itemExplanation = value; }
+    public string ItemExplanation { get => itemExplanation; }
 
-    public ItemQuality ItemQuality { get => itemQuality; set => itemQuality = value; }
+    public int Tier { get => tier; }
+
+    public GameObject ItemEffectPrefab { get => itemEffectPrefab; }
+
+    public ItemType ItemType { get => itemType; }
+
+    public ItemQuality ItemQuality
+    {
+        get
+        {
+            // Match tier and ItemQuality
+            return (ItemQuality)Mathf.Clamp(tier, 0, System.Enum.GetValues(typeof(ItemQuality)).Length - 1);
+        }
+    }
 }
 
 public enum ItemQuality
@@ -33,3 +52,11 @@ public enum ItemQuality
     Epic,
     Legendary
 }
+
+public enum ItemType
+{
+    None,
+    LootItem,
+    Staff
+}
+

@@ -20,12 +20,16 @@ public class ScenarioSO : ScriptableObject
     [SerializeField] private Location location;
     [SerializeField] private bool hasEnemy;
     [SerializeField] private EnemySO enemy;
+    [SerializeField] private LootItemEffectType lootItemType; //if "None", means there is no item
 
     #endregion OTHER
 
 
-    public bool HasEnemy { get => hasEnemy; set => hasEnemy = value; }
-    public EnemySO Enemy { get => enemy; set => enemy = value; }
+    public bool HasEnemy { get => hasEnemy;}
+
+    public EnemySO Enemy { get => enemy;}
+
+    public LootItemEffectType LootItemType { get => lootItemType; }
 
     public List<ScenarioSO> GetNextOptions() => nextOptions;
 

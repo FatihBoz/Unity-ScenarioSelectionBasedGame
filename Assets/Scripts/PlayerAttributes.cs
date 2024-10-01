@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerAttributes : MonoBehaviour
@@ -6,6 +7,7 @@ public class PlayerAttributes : MonoBehaviour
 
     public float MaxHp { get; private set; } = 100f;
     public float CurrentHp { get; private set; }
+    public float DamageReduction { get; private set; }  //as percentage, between 0-1
     public int Level { get; private set; }
 
     private void Awake()
@@ -21,8 +23,34 @@ public class PlayerAttributes : MonoBehaviour
     private void Start()
     {
         Level = 1;
+        DamageReduction = 0;
         CurrentHp = MaxHp;
     }
+
+
+
+
+    public void LevelUp(int levelToUp)
+    {
+        Level += levelToUp;
+        print(Level);
+    }
+
+    public void IncreaseMaxHealth(float increasingAmount)
+    {
+        MaxHp += increasingAmount;
+    }
+
+    public void IncreaseDamageReduction(float damageReductionPercentage)
+    {
+        DamageReduction += damageReductionPercentage;
+    }
+
+    public void DecreaseDamageReduction(float damageReductionPercentage)
+    {
+        DamageReduction -= damageReductionPercentage;
+    }
+
 
 
     public void PlayerAttributes_OnHealthDecreased(float damageAmount)
@@ -43,20 +71,15 @@ public class PlayerAttributes : MonoBehaviour
         }
     }
 
-    public void PlayerAttributes_OnHealthIncreased(float healAmount)
+    void PlayerAttributes_OnHealthIncreased(float healAmount)
     {
         OnCurrentHealthChanged(healAmount);
     }
 
-    public void OnCurrentHealthChanged(float amount)
+    void OnCurrentHealthChanged(float amount)
     {
         CurrentHp += amount;
         EventManager<float>.TriggerEvent(EventKey.HEALTH_UI_CHANGED, (CurrentHp / MaxHp));
-    }
-
-    public void LevelUp()
-    {
-        Level++;
     }
 
     private void OnEnable()

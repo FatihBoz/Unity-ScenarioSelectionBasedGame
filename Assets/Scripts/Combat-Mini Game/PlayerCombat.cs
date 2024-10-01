@@ -9,7 +9,7 @@ public class PlayerCombat : Combat
 
     [SerializeField] private float maxHp = 100f;
     [SerializeField] private float maxMana = 100f;
-
+    [SerializeField] private float manaRegenPerSecond = 8f;
 
     [Header("PLAYER SKILL PREFAB")]
 
@@ -37,6 +37,18 @@ public class PlayerCombat : Combat
         };
     }
 
+    private void Start()
+    {
+        currentHp = maxHp;
+        currentMana = maxMana;
+
+    }
+
+    private void FixedUpdate()
+    {
+        RegenerateMana();
+    }
+
 
     public void OnSkillButtonPressed(string elementName)
     {
@@ -60,32 +72,20 @@ public class PlayerCombat : Combat
                     //call a method from super class on complete
                     .OnComplete(() => OnSkillMovementFinished(rect,newSkill));
 
-                MiniGameCombatManager.Instance.playerQ.Add(new SkillIcon(newSkill, rect));
+                MiniGameCombatManager.Instance.PlayerQ.Add(new SkillIcon(newSkill, rect));
             }
             //Call a method to set image from super class
             SetImage(obj, newSkill);
-
         }
     }
 
-
-    private IEnumerator ManaRegen()
+    protected override void RegenerateMana()
     {
-        while (true)
-        {
-            if (currentMana < maxMana)
-            {
-                currentMana += 10;
-                if (currentMana > maxMana)
-                {
-                    currentMana = maxMana;
-                }
-
-                MiniGameCombatUI.Instance.PlayerManaRegen(currentMana / maxMana);
-            }
-            yield return new WaitForSeconds(1.25f);
-
-        }
+        currentMana += manaRegenPerSecond * Time.fixedDeltaTime;
+        //Limits mana between specified values
+        currentMana = Mathf.Clamp(currentMana, 0, maxMana);
+        //Update UI
+        MiniGameCombatUI.Instance.UpdatePlayerManaBar(currentMana / maxMana);
     }
 
 
@@ -93,7 +93,7 @@ public class PlayerCombat : Combat
     protected override void OnSkillMovementFinished(RectTransform skillIcon, Skill skill)
     {
         base.OnSkillMovementFinished(skillIcon, skill);
-        MiniGameCombatManager.Instance.playerQ.RemoveAt(0);
+        MiniGameCombatManager.Instance.PlayerQ.RemoveAt(0);
         EventManager<Skill>.TriggerEvent(EventKey.MiniGameCombat_Enemy_TakeDamage, skill);
     }
 
@@ -102,7 +102,7 @@ public class PlayerCombat : Combat
     {
         currentHp -= damageAmount;
         //Update UI
-        MiniGameCombatUI.Instance.PlayerTakeDamage(currentHp / maxHp);
+        MiniGameCombatUI.Instance.UpdatePlayerHealthBarUI(currentHp / maxHp);
     }
 
 
@@ -114,10 +114,6 @@ public class PlayerCombat : Combat
 
     private void OnEnable()
     {
-        currentHp = maxHp;
-        currentMana = maxMana;
-        StartCoroutine(ManaRegen());
-
         EventManager<float>.Subscribe(EventKey.MiniGameCombat_Player_TakeDamage, PlayerCombat_OnPlayerTakeDamage);
     }
 

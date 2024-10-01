@@ -9,7 +9,7 @@ public class ElementalStrength
     public ElementalStrength()
     {
         //determines which element is stronger against which
-        elementStrengths.Add(Element.Fire, Element.Wind | Element.Wild);       // Fire over both Wind and Wild
+        elementStrengths.Add(Element.Fire, Element.Wind | Element.Wild);       // Fire over both Wind and Wild as an example
 
         elementStrengths.Add(Element.Water, Element.Fire);
 

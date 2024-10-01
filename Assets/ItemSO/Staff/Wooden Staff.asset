@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 589b1c72d37512943924120fe2e6e1a0, type: 3}
+  m_Name: Wooden Staff
+  m_EditorClassIdentifier: 
+  itemExplanation: 'Recovers %10 health in every certain
+
+    number of choices.'
+  itemName: Wooden Staff
+  value: 0
+  tier: 1
+  itemSprite: {fileID: 21300000, guid: 97057ba1a0295a64dae97da2fa42e1ad, type: 3}
+  itemEffectPrefab: {fileID: 1832665921452237, guid: 0e6d06a40cf4bd64492bdb838310e1ea, type: 3}
+  itemType: 2

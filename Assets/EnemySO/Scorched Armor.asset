@@ -16,6 +16,6 @@ MonoBehaviour:
   skillElement: 1
   skillSprite: {fileID: 21300000, guid: fd594b82c240f624d989eedd0a170618, type: 3}
   explosionPrefab: {fileID: 6166304710420828617, guid: de25044bf824c674a91ea2691ae9b40c, type: 3}
-  manaToCast: 20
-  damage: 17
-  speed: 0.4
+  manaToCast: 15
+  damage: 14
+  speed: 0.35

@@ -20,6 +20,10 @@ MonoBehaviour:
   skills:
   - {fileID: 11400000, guid: 0ab77ab5d2e643440ae3b5844c68bca4, type: 2}
   - {fileID: 11400000, guid: 3c7d846dfb9034c4a91cb70143dcfb2d, type: 2}
-  _name: Dire Wolf
+  lootItemDrop: []
   maxHp: 60
+  maxMana: 100
+  manaRegenPerSecond: 10
+  manaPercentageThresholdForCombo: 0.7
   enemyInfo: "ula gurt g\xF6rd\xFCm gurt\ngurt gurt"
+  _name: Dire Wolf

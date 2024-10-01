@@ -16,8 +16,6 @@ public class ScenarioManager : MonoBehaviour
         }
             
         instance = this;
-
-        Application.targetFrameRate = Screen.currentResolution.refreshRate;
     }
 
     private void Start()

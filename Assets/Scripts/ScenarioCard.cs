@@ -7,7 +7,8 @@ public class ScenarioCard : MonoBehaviour
     [SerializeField] private TextMeshProUGUI text;
     [SerializeField] private TextMeshProUGUI backText;
     [SerializeField] private Image image;
-    private ScenarioSO scenario;
+
+    public ScenarioSO Scenario { get; private set; }
 
     private ScenarioCardAnimationController cardAnimationController;
 
@@ -18,10 +19,10 @@ public class ScenarioCard : MonoBehaviour
 
     public void Display(ScenarioSO givenScenario)
     {
-        this.scenario = givenScenario;
-        text.text = scenario.GetCardText();
-        backText.text = scenario.GetBackText();
-        image.sprite = scenario.GetSprite();
+        this.Scenario = givenScenario;
+        text.text = Scenario.GetCardText();
+        backText.text = Scenario.GetBackText();
+        image.sprite = Scenario.GetSprite();
     }
 
     public void OnScenarioCardClicked()
@@ -31,7 +32,7 @@ public class ScenarioCard : MonoBehaviour
             //Delete edited card instead of turn back to default
             DestroyImmediate(this.gameObject);
             //This line does not rely on this game object and will be executed after destroying
-            ScenarioManager.instance.SelectScenario(scenario);
+            ScenarioManager.instance.SelectScenario(Scenario);
             //!But this is not the best approach ig.Consider it as risky
             //todo:Rearrange this method
         }

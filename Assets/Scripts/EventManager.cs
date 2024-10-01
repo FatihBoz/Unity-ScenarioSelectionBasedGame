@@ -43,8 +43,10 @@ public enum EventKey
 {
     SELECT_SCENARIO,
     ITEM_TAKEN,
-    STAFF_EQUIPPED,
-    Equipped_Staff_Changed,
+    STAFF_EQUIPPED, //!BUNLARIN ÝKÝSÝNÝ 
+    Equipped_Staff_Changed,//!BÝRLEÞTÝREMEZ MÝYÝZ?
+    LootItem_Used,
+
     INVENTORY_SETUP,
     Staff_Inventory_Update,
     LootItem_Inventory_Update,
@@ -55,5 +57,6 @@ public enum EventKey
     MiniGameCombat_Enemy_TakeDamage,
     MiniGameCombat_Player_TakeDamage,
     ENEMY_FOUND,
-    STAFF_FOUND
+    STAFF_FOUND,
+    ScenarioCard_Flipped,
 }

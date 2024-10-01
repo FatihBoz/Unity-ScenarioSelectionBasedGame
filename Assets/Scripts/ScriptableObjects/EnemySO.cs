@@ -5,17 +5,28 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Enemy",menuName = "Enemy")]
 public class EnemySO : ScriptableObject
 {
+    [Header("LIST")]
     [SerializeField] private List<ElementInteraction> interactions;
 
     [SerializeField] private List<SkillSO> skills;
 
-    [SerializeField] private string _name;
+    [SerializeField] private List<ItemSO> lootItemDrop;
 
+
+    [Header("ATTRIBUTES")]
     [SerializeField] private int maxHp;
 
-    [TextArea]
-    [SerializeField] private string enemyInfo;
+    [SerializeField] private int maxMana;
 
+    [SerializeField] private float manaRegenPerSecond;
+
+    [SerializeField] private float manaPercentageThresholdForCombo;
+
+
+    [Header("UI")]
+    [TextArea][SerializeField] private string enemyInfo;
+
+    [SerializeField] private string _name;
 
 
     public bool IsWeakTo(Element element)
@@ -32,15 +43,23 @@ public class EnemySO : ScriptableObject
     }
 
 
-    public int MaxHp { get => maxHp; set => maxHp = value; }
+    public int MaxHp { get => maxHp;}
 
-    public string Name { get => _name; set => _name = value; }
+    public string Name { get => _name;}
 
-    public List<SkillSO> Skills { get => skills; set => skills = value; }
+    public List<SkillSO> Skills { get => skills; }
 
-    public List<ElementInteraction> Interactions { get => interactions; set => interactions = value; }
+    public List<ElementInteraction> Interactions { get => interactions; }
 
-    public string EnemyInfo { get => enemyInfo; set => enemyInfo = value; }
+    public string EnemyInfo { get => enemyInfo; }
+
+    public List<ItemSO> LootItemDrop { get => lootItemDrop; }
+
+    public int MaxMana { get => maxMana; set => maxMana = value; }
+
+    public float ManaRegenPerSecond { get => manaRegenPerSecond;}
+
+    public float ManaPercentageThresholdForCombo { get => manaPercentageThresholdForCombo;}
 }
 
 

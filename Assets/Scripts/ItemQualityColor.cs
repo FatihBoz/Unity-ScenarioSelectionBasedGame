@@ -9,11 +9,6 @@ public static class ItemQualityColor
 
     public static Color GetColor(ItemQuality type)
     {
-        //if key exists return its color , if not return default color
-        if (type == ItemQuality.Common)
-        {
-            Debug.Log(qualityColors.Count);
-        }
 
         if (qualityColors.TryGetValue(type, out Color color))
         {

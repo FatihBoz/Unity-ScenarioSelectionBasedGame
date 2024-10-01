@@ -3,10 +3,10 @@ using UnityEngine;
 public class StaffAttributes : MonoBehaviour
 {
     public static StaffAttributes Instance;
-    public float DamageReduction { get; private set; }
     public bool CanBeRevived { get; private set; }
     public float NullifyChance { get; private set; }
 
+    private float damageReduction = 0f;  //as percentage, between 0-1
     private void Awake()
     {
         if (Instance != null)
@@ -20,7 +20,8 @@ public class StaffAttributes : MonoBehaviour
 
     private void ResetAllAttributes()
     {
-        DamageReduction = 0f;
+        PlayerAttributes.Instance.DecreaseDamageReduction(damageReduction);
+        damageReduction = 0f;
         NullifyChance = 0f;
         CanBeRevived = false;
     }
@@ -28,7 +29,8 @@ public class StaffAttributes : MonoBehaviour
     public void SetDamageReduction(float DamageReduction)
     {
         ResetAllAttributes();
-        this.DamageReduction = DamageReduction;
+        damageReduction = DamageReduction;
+        PlayerAttributes.Instance.IncreaseDamageReduction(DamageReduction);
     }
 
     public void EscapeFromDeath()

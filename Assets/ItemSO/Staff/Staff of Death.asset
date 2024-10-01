@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 589b1c72d37512943924120fe2e6e1a0, type: 3}
+  m_Name: Staff of Death
+  m_EditorClassIdentifier: 
+  itemExplanation: 'Brings you back from death
+
+    for once.'
+  itemName: Staff of Death
+  value: 0
+  tier: 4
+  itemSprite: {fileID: 21300000, guid: ad95d307c6c5c7b46a5ff348b6ad0116, type: 3}
+  itemEffectPrefab: {fileID: 1934668450534516667, guid: 4fc17a432180e5d4e8ed0ab52df394ea, type: 3}
+  itemType: 2

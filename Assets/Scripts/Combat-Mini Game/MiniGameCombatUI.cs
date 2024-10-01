@@ -94,12 +94,12 @@ public class MiniGameCombatUI : MonoBehaviour
 
 
 
-    public void PlayerTakeDamage(float healthFillAmount)
+    public void UpdatePlayerHealthBarUI(float healthFillAmount)
     {
         playerHealth.DOFillAmount(healthFillAmount, 1f);
     }
 
-    public void PlayerManaRegen(float manaFillAmount)
+    public void UpdatePlayerManaBar(float manaFillAmount)
     {
         playerMana.DOFillAmount(manaFillAmount, 1f);
     }
@@ -109,7 +109,7 @@ public class MiniGameCombatUI : MonoBehaviour
         playerMana.DOFillAmount(manaFillAmount, 1f);
     }
 
-    public void EnemyTakeDamage(float healthFillAmount)
+    public void UpdateEnemyHealthBar(float healthFillAmount)
     {
         enemyHealth.DOFillAmount(healthFillAmount, 1f);
     }

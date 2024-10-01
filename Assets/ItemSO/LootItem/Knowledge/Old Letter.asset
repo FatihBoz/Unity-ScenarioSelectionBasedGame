@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 589b1c72d37512943924120fe2e6e1a0, type: 3}
+  m_Name: Old Letter
+  m_EditorClassIdentifier: 
+  itemExplanation: 'A faded correspondence
+
+    containing brief messages
+
+    and
+    hints of a forgotten
+
+    relationship.'
+  itemName: Old Letter
+  tier: 1
+  itemSprite: {fileID: 21300000, guid: 472d92f47dce423499f3855e767d434c, type: 3}
+  itemEffectPrefab: {fileID: 817800730915581022, guid: 38a502a44c2ea2149b2c1a5421d87b22, type: 3}
+  itemType: 1

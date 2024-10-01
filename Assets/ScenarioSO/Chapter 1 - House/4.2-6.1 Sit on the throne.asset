@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b1a98eb64d26d44f8738a83f8b57706, type: 3}
+  m_Name: 4.2-6.1 Sit on the throne
+  m_EditorClassIdentifier: 
+  narratorText: 'As you sit, your mind is suddenly flooded with images of
+
+    the
+    past: rulers who once governed this
+
+    very throne. You can see their lives,
+    struggles, and secrets.
+
+    A child can''t handle this much. What will you do?'
+  cardText: 'Sit on the
+
+    throne'
+  backText: 'As you get closer
+
+    to the throne,
+
+    different feelings
+
+    surround
+    you.'
+  image: {fileID: 21300000, guid: 551533d2baa949e48bfd443417d1021a, type: 3}
+  nextOptions:
+  - {fileID: 11400000, guid: c0961e765d720e54dbd76375b657fe7a, type: 2}
+  - {fileID: 11400000, guid: 47604788e8c8ef94991fffbab08bcc41, type: 2}
+  rewardPrefab: {fileID: 6065419709317970287, guid: 79e5d141b12c56a458d3cc227b4d078e, type: 3}
+  location: 1
+  hasEnemy: 0
+  enemy: {fileID: 0}
+  lootItemType: 0

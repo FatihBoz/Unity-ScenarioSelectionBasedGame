@@ -18,4 +18,4 @@ MonoBehaviour:
   explosionPrefab: {fileID: 545591926040960347, guid: 09dd7b6920996524d952c311e1223ad7, type: 3}
   manaToCast: 20
   damage: 14
-  speed: 0.4
+  speed: 0.3

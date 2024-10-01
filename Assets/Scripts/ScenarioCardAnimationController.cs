@@ -1,8 +1,8 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(ScenarioCard))]
 public class ScenarioCardAnimationController : MonoBehaviour
 {
     public static bool canFlip;
@@ -14,6 +14,7 @@ public class ScenarioCardAnimationController : MonoBehaviour
 
     private Animator animator;
     private Image img;
+    private readonly float delayAmount = .25f;
 
     private void Awake()
     {
@@ -29,7 +30,7 @@ public class ScenarioCardAnimationController : MonoBehaviour
         if (canFlip)
         {
             animator.SetTrigger("CardFlip");
-            StartCoroutine(ShowTextAfterFlip(0.2f));
+            StartCoroutine(ShowTextAfterFlip(delayAmount));
             canFlip = false;
         }
     }
@@ -37,11 +38,14 @@ public class ScenarioCardAnimationController : MonoBehaviour
     private IEnumerator ShowTextAfterFlip(float delay)
     {
         yield return new WaitForSeconds(delay);
+
         frontContent.SetActive(false);
         img.sprite = emptyCardBack;
         backContent.SetActive(true);
 
         yield return new WaitForSeconds(delay);
         isFlipped = true;
+
+        EventManager<ScenarioCard>.TriggerEvent(EventKey.ScenarioCard_Flipped, GetComponent<ScenarioCard>());
     }
 }
