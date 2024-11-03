@@ -5,50 +5,58 @@ public class PlayerAttributes : MonoBehaviour
 {
     public static PlayerAttributes Instance;
 
-    public float MaxHp { get; private set; } = 100f;
-    public float CurrentHp { get; private set; }
-    public float DamageReduction { get; private set; }  //as percentage, between 0-1
-    public int Level { get; private set; }
+    private float maxHp = 100f;
+    private float maxMana = 100f;
+    private float damageReduction;
+    private float currentHp;
+    private int level;
+
+
+    public float MaxHp { get => maxHp;}
+    public float CurrentHp { get => currentHp;}
+    public float DamageReduction { get => damageReduction;}  //as percentage, between 0-1
+    public int Level { get => level;}
+    public float MaxMana { get => maxMana;}
 
     private void Awake()
     {
-        if (Instance != null)
-        {
-            Destroy(this.gameObject);
-            return;
-        }
         Instance = this;
     }
 
     private void Start()
     {
-        Level = 1;
-        DamageReduction = 0;
-        CurrentHp = MaxHp;
+        level = 1;
+        damageReduction = 0;
+        currentHp = MaxHp;
     }
 
 
-
+    public void IncreaseMaxMana(float manaAmount)
+    {
+        maxMana += manaAmount;   
+    }
 
     public void LevelUp(int levelToUp)
     {
-        Level += levelToUp;
+        level += levelToUp;
         print(Level);
     }
 
     public void IncreaseMaxHealth(float increasingAmount)
     {
-        MaxHp += increasingAmount;
+        maxHp += increasingAmount;
     }
 
     public void IncreaseDamageReduction(float damageReductionPercentage)
     {
-        DamageReduction += damageReductionPercentage;
+        damageReduction += damageReductionPercentage;
+        damageReduction = Mathf.Clamp01(damageReduction);
     }
 
     public void DecreaseDamageReduction(float damageReductionPercentage)
     {
-        DamageReduction -= damageReductionPercentage;
+        damageReduction -= damageReductionPercentage;
+        damageReduction = Mathf.Clamp01(damageReduction);
     }
 
 
@@ -58,27 +66,19 @@ public class PlayerAttributes : MonoBehaviour
         OnCurrentHealthChanged((-1) * damageAmount);
         if (CurrentHp <= 0)
         {
-            if (StaffAttributes.Instance.CanBeRevived)
-            {
-                //!Should be waited about 1 sec to deplete the health bar
-                CurrentHp = MaxHp;
-                EventManager<float>.TriggerEvent(EventKey.HEALTH_INCREASED, CurrentHp);
-                return;
-            }
-
-            //todo:death screen
-            //todo:return to a certain scenario
+            EventManager<PlayerAttributes>.TriggerEvent(EventKey.Player_Died, this);
         }
     }
 
     void PlayerAttributes_OnHealthIncreased(float healAmount)
     {
         OnCurrentHealthChanged(healAmount);
+        currentHp = Mathf.Clamp(currentHp, 0, maxHp);
     }
 
     void OnCurrentHealthChanged(float amount)
     {
-        CurrentHp += amount;
+        currentHp += amount;
         EventManager<float>.TriggerEvent(EventKey.HEALTH_UI_CHANGED, (CurrentHp / MaxHp));
     }
 

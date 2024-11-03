@@ -16,13 +16,12 @@ MonoBehaviour:
     who is turning seven years old. As a family tradition\n you will leave home for
     your training."
   cardText: Continue
-  backText: 0
+  backText: '?'
   image: {fileID: 21300000, guid: c73821859b12f6a4481cf9f1ca7e3981, type: 3}
   nextOptions:
   - {fileID: 11400000, guid: 712170d35024b7e4e9fe79b083e39626, type: 2}
   - {fileID: 11400000, guid: 75b361c00bc79b3408a46c218b033eb8, type: 2}
-  - {fileID: 11400000, guid: bfecd4bd056cfb94e9913dfa6b67ec59, type: 2}
-  rewardPrefab: {fileID: 6065419709317970287, guid: 79e5d141b12c56a458d3cc227b4d078e, type: 3}
+  rewardPrefab: {fileID: 5767493104038086824, guid: 3fa1d0bbb0c2c234fa96f87fdbaf31f1, type: 3}
   location: 1
   hasEnemy: 0
   enemy: {fileID: 11400000, guid: 0c8542bebcf970343a38efb0485fcc01, type: 2}

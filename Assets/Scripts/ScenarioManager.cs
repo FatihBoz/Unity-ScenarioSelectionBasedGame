@@ -10,11 +10,6 @@ public class ScenarioManager : MonoBehaviour
     
     private void Awake()
     {
-        if (instance != null)
-        {
-            return;   
-        }
-            
         instance = this;
     }
 

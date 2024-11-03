@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b1a98eb64d26d44f8738a83f8b57706, type: 3}
+  m_Name: 23.1-24.2 Shout into the cave
+  m_EditorClassIdentifier: 
+  narratorText: "You can tell by their attire that these are hunters whose \nfootsteps
+    you are following."
+  cardText: 'Shout into
+
+    the cave'
+  backText: 'After a while,
+
+    several people
+
+    appeared at
+
+    the entrance
+    of
+
+    the cave.'
+  image: {fileID: 0}
+  nextOptions:
+  - {fileID: 11400000, guid: 2ace9431eafd9e54ca840e46071f949c, type: 2}
+  - {fileID: 11400000, guid: 4dbe9c439ae681b44a72cd497b5c706f, type: 2}
+  rewardPrefab: {fileID: 6065419709317970287, guid: 79e5d141b12c56a458d3cc227b4d078e, type: 3}
+  location: 1
+  hasEnemy: 0
+  enemy: {fileID: 0}
+  lootItemType: 0

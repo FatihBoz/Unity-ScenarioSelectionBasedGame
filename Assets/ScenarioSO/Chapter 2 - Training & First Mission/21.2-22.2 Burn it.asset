@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b1a98eb64d26d44f8738a83f8b57706, type: 3}
+  m_Name: 21.2-22.2 Burn it
+  m_EditorClassIdentifier: 
+  narratorText: 
+  cardText: Burn it
+  backText: 'A fire this size
+
+    must have
+
+    caught the
+
+    direwolf''s
+
+    attention.'
+  image: {fileID: 21300000, guid: 425c340a48dbaee48af378cb75618683, type: 3}
+  nextOptions:
+  - {fileID: 11400000, guid: b398ce779d9e19d40b311a74f413f980, type: 2}
+  - {fileID: 11400000}
+  rewardPrefab: {fileID: 6065419709317970287, guid: 79e5d141b12c56a458d3cc227b4d078e, type: 3}
+  location: 1
+  hasEnemy: 0
+  enemy: {fileID: 0}
+  lootItemType: 0

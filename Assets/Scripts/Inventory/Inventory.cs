@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 public class Inventory : MonoBehaviour
 {
@@ -100,8 +99,6 @@ public class Inventory : MonoBehaviour
 
     private void InventoryManager_OnItemTaken(ItemSO item)
     {
-
-
         AddItem(item);
     }
 

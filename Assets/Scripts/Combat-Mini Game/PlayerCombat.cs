@@ -1,5 +1,4 @@
 using DG.Tweening;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,8 +7,7 @@ public class PlayerCombat : Combat
     [Header("PLAYER ATTRIBUTES")]
 
     [SerializeField] private float maxHp = 100f;
-    [SerializeField] private float maxMana = 100f;
-    [SerializeField] private float manaRegenPerSecond = 8f;
+    [SerializeField] private float manaRegenPerSecond = 7f;
 
     [Header("PLAYER SKILL PREFAB")]
 
@@ -40,8 +38,7 @@ public class PlayerCombat : Combat
     private void Start()
     {
         currentHp = maxHp;
-        currentMana = maxMana;
-
+        currentMana = PlayerAttributes.Instance.MaxMana;
     }
 
     private void FixedUpdate()
@@ -57,7 +54,7 @@ public class PlayerCombat : Combat
         {
             currentMana -= skill.ManaToCast;
 
-            MiniGameCombatUI.Instance.PlayerCastSkill(currentMana / maxMana);
+            MiniGameCombatUI.Instance.PlayerCastSkill(currentMana / PlayerAttributes.Instance.MaxMana);
 
             GameObject obj = Instantiate(skillIcon, spawnPoint.position, Quaternion.identity,spawnPoint);
 
@@ -83,9 +80,9 @@ public class PlayerCombat : Combat
     {
         currentMana += manaRegenPerSecond * Time.fixedDeltaTime;
         //Limits mana between specified values
-        currentMana = Mathf.Clamp(currentMana, 0, maxMana);
+        currentMana = Mathf.Clamp(currentMana, 0, PlayerAttributes.Instance.MaxMana);
         //Update UI
-        MiniGameCombatUI.Instance.UpdatePlayerManaBar(currentMana / maxMana);
+        MiniGameCombatUI.Instance.UpdatePlayerManaBar(currentMana / PlayerAttributes.Instance.MaxMana);
     }
 
 
@@ -103,9 +100,12 @@ public class PlayerCombat : Combat
         currentHp -= damageAmount;
         //Update UI
         MiniGameCombatUI.Instance.UpdatePlayerHealthBarUI(currentHp / maxHp);
+        if (currentHp < 0)
+        {
+            EventManager<Combat>.TriggerEvent(EventKey.MiniGame_Finished, this);
+            print("Evente girdi");
+        }
     }
-
-
     private void OnDisable()
     {
         EventManager<float>.Unsubscribe(EventKey.MiniGameCombat_Player_TakeDamage, PlayerCombat_OnPlayerTakeDamage);

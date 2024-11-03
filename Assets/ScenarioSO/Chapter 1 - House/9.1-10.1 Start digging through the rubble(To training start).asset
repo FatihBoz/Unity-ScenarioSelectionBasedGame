@@ -12,13 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b1a98eb64d26d44f8738a83f8b57706, type: 3}
   m_Name: 9.1-10.1 Start digging through the rubble(To training start)
   m_EditorClassIdentifier: 
-  narratorText: 
+  narratorText: 'After a few days of rest, you attended your first lesson
+
+    of
+    magic. First you will receive theoretical training
+
+    and then you will put
+    what you have learned into practice.'
   cardText: 'Dig through
 
     the rubble'
   backText: 
   image: {fileID: 21300000, guid: 551533d2baa949e48bfd443417d1021a, type: 3}
-  nextOptions: []
+  nextOptions:
+  - {fileID: 11400000, guid: d2f3c8165216ff647b253db6a02f8844, type: 2}
   rewardPrefab: {fileID: 6065419709317970287, guid: 79e5d141b12c56a458d3cc227b4d078e, type: 3}
   location: 1
   hasEnemy: 0

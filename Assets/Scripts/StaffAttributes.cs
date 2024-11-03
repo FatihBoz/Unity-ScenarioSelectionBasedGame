@@ -30,6 +30,7 @@ public class StaffAttributes : MonoBehaviour
     {
         ResetAllAttributes();
         damageReduction = DamageReduction;
+        damageReduction = Mathf.Clamp01(damageReduction);
         PlayerAttributes.Instance.IncreaseDamageReduction(DamageReduction);
     }
 
@@ -43,5 +44,6 @@ public class StaffAttributes : MonoBehaviour
     {
         ResetAllAttributes();
         NullifyChance = chance;
+        NullifyChance = Mathf.Clamp01(NullifyChance);
     }
 }

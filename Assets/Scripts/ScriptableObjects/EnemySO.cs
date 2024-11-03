@@ -22,6 +22,10 @@ public class EnemySO : ScriptableObject
 
     [SerializeField] private float manaPercentageThresholdForCombo;
 
+    [SerializeField] private EnemyState defaultEnemyState;
+
+    [SerializeField] private float timeBetweenSkillCastingInManaRecovery;
+
 
     [Header("UI")]
     [TextArea][SerializeField] private string enemyInfo;
@@ -60,6 +64,10 @@ public class EnemySO : ScriptableObject
     public float ManaRegenPerSecond { get => manaRegenPerSecond;}
 
     public float ManaPercentageThresholdForCombo { get => manaPercentageThresholdForCombo;}
+
+    public EnemyState DefaultEnemyState { get => defaultEnemyState;}
+
+    public float TimeBetweenSkillCastingInManaRecovery { get => timeBetweenSkillCastingInManaRecovery;}
 }
 
 

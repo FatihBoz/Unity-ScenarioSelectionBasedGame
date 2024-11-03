@@ -1,5 +1,6 @@
 using DG.Tweening;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyCombat : Combat
@@ -11,18 +12,21 @@ public class EnemyCombat : Combat
     [SerializeField] private float weaknessMultiplier;
     [SerializeField] private float resistanceMultiplier;
 
+
     private readonly float timeBetweenConsecutiveSkills = .4f;
     private readonly float timeToStartCombat = 2f;
 
+    private float manaRecoveryTimer = 0f;
     private float currentHp;
     private float currentMana;
     private bool canUseSkill;
-    private EnemyState enemyState;
+    private EnemyState currentEnemyState;
 
     private void Start()
     {
         currentHp = enemy.MaxHp;
         currentMana = enemy.MaxMana;
+        currentEnemyState = enemy.DefaultEnemyState;
 
         Invoke(nameof(StartCombat), timeToStartCombat);
     }
@@ -41,14 +45,19 @@ public class EnemyCombat : Combat
             return;
         }
 
-        DetermineEnemyState();
+        //if enemy's behaviour is flexible
+        if(enemy.DefaultEnemyState == EnemyState.None)
+        {
+            DetermineEnemyState();
+        }
+
 
         ActAccordingToState();
     }
 
     void ActAccordingToState()
     {
-        switch (enemyState)
+        switch (currentEnemyState)
         {
             case EnemyState.Aggresive:
                 StartCoroutine(
@@ -57,8 +66,11 @@ public class EnemyCombat : Combat
 
             case EnemyState.Defensive:
                 StartCoroutine(
-                    ConsecutiveSkillCasting(SkillCountDifference())
-                    );
+                    ConsecutiveSkillCasting(SkillCountDifference()));
+                break;
+
+            case EnemyState.ManaRecovery:
+                HandleManaRecovery();
                 break;
         }
     }
@@ -67,18 +79,30 @@ public class EnemyCombat : Combat
     {
         if (MiniGameCombatManager.Instance.PlayerQ.Count > 0)
         {
-            enemyState = EnemyState.Defensive;
+            currentEnemyState = EnemyState.Defensive;
         }
         else if (currentMana >= enemy.MaxMana * enemy.ManaPercentageThresholdForCombo)
         {
-            //print(currentMana);
-            enemyState = EnemyState.Aggresive;
+            currentEnemyState = EnemyState.Aggresive;
         }
         else
         {
-            enemyState = EnemyState.ManaRecovery;
+            currentEnemyState = EnemyState.ManaRecovery;
+            return;
         }
-        
+
+        manaRecoveryTimer = 0f;
+    }
+
+    void HandleManaRecovery()
+    {
+        manaRecoveryTimer += Time.fixedDeltaTime;
+
+        if (manaRecoveryTimer >= enemy.TimeBetweenSkillCastingInManaRecovery)
+        {
+            CastSkill();
+            manaRecoveryTimer = 0f;
+        }
     }
 
     int SkillCountDifference()
@@ -91,8 +115,6 @@ public class EnemyCombat : Combat
     protected override void RegenerateMana()
     {
         currentMana += enemy.ManaRegenPerSecond * Time.fixedDeltaTime;
-        //Limits mana between specified values
-        currentMana = Mathf.Clamp(currentMana, 0, enemy.MaxMana);
     }
 
 
@@ -156,6 +178,9 @@ public class EnemyCombat : Combat
         EventManager<float>.TriggerEvent(EventKey.MiniGameCombat_Player_TakeDamage, skill.Damage);
     }
 
+    public List<ItemSO> LootItemDrop { get => enemy.LootItemDrop; }
+
+
 
     private void EnemyCombat_OnEnemyTakeDamage(Skill skill)
     {
@@ -173,9 +198,13 @@ public class EnemyCombat : Combat
             currentHp -= skill.Damage;
         }
 
-
         //Update UI
         MiniGameCombatUI.Instance.UpdateEnemyHealthBar(currentHp / enemy.MaxHp);
+
+        if (currentHp <= 0)
+        {
+            EventManager<Combat>.TriggerEvent(EventKey.MiniGame_Finished, this);
+        }
     }
 
     private void EnemyCombat_OnEnemyFound(EnemySO enemySO)
@@ -201,6 +230,7 @@ public class EnemyCombat : Combat
 
 public enum EnemyState
 {
+    None,
     ManaRecovery, //Active at low mana, waiting its mana to fill while using skills one by one with certain time intervals 
     Defensive, //Matching player skills
     Aggresive //using multiple skill at high mana

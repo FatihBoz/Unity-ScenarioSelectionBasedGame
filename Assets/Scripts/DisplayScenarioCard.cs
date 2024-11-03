@@ -5,7 +5,7 @@ public class DisplayScenarioCard : MonoBehaviour
     [SerializeField] private Transform scenarioCardHolder;
     [SerializeField] private GameObject scenarioCardPrefab;
 
-    private void MakeInvisibleOfAllCards()
+    private void MakeAllCardsInvisible()
     {
         //Instantiate a card to replace the deleted one
         Instantiate(scenarioCardPrefab, scenarioCardHolder);
@@ -18,7 +18,7 @@ public class DisplayScenarioCard : MonoBehaviour
 
     private void DisplayScenarioCard_OnScenarioSelected(ScenarioSO scenario)
     {
-        MakeInvisibleOfAllCards();
+        MakeAllCardsInvisible();
         for (int i = 0; i < scenario.GetNextOptions().Count; i++)
         {
             scenarioCardHolder.GetChild(i).gameObject.SetActive(true);

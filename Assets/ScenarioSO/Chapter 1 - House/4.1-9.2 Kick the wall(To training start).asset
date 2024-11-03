@@ -12,7 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b1a98eb64d26d44f8738a83f8b57706, type: 3}
   m_Name: 4.1-9.2 Kick the wall(To training start)
   m_EditorClassIdentifier: 
-  narratorText: 
+  narratorText: 'After a few days of rest, you attended your first lesson
+
+    of
+    magic. First you will receive theoretical training
+
+    and then you will put
+    what you have learned into practice.'
   cardText: Kick the wall
   backText: 'The wall collapsed
 

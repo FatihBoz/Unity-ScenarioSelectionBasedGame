@@ -68,5 +68,5 @@ public enum LootItemEffectType
     Level,
     Healer,
     MaxHealth,
-    DamageReduction
+    MaxMana
 }

@@ -23,5 +23,5 @@ MonoBehaviour:
   itemName: Ancient Tome
   tier: 4
   itemSprite: {fileID: 21300000, guid: 3d1cba64c7db6164f8bad0f34af762c8, type: 3}
-  itemEffectPrefab: {fileID: 817800730915581022, guid: 38a502a44c2ea2149b2c1a5421d87b22, type: 3}
+  itemEffectPrefab: {fileID: 4005044341067681325, guid: e623888358a22554a877a479d75e1ea2, type: 3}
   itemType: 1

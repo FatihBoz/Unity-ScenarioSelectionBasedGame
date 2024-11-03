@@ -34,7 +34,6 @@ public class ScenarioCard : MonoBehaviour
             //This line does not rely on this game object and will be executed after destroying
             ScenarioManager.instance.SelectScenario(Scenario);
             //!But this is not the best approach ig.Consider it as risky
-            //todo:Rearrange this method
         }
     }
 }

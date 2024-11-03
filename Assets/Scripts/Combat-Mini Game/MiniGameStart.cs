@@ -1,10 +1,11 @@
 using DG.Tweening;
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MiniGameStart : MonoBehaviour
+public class MiniGameStart : MiniGamePanel
 {
     [Header("Float Values")]
     [SerializeField] private float timeToBeVisibleAfterAnimation = 1f;
@@ -21,22 +22,16 @@ public class MiniGameStart : MonoBehaviour
 
     [SerializeField] private GameObject scroll;
 
-    [SerializeField] private Image BackgroundImageSprite;
-
 
     [Header("Other")]
-    [SerializeField] private GameObject canvas;
-
-    [SerializeField] private GameObject startingPanel;
 
     [SerializeField] private GameObject miniGamePrefab;
-
     [SerializeField] private Image blackScreen;
 
 
     private EnemySO enemy;
     private TextMeshProUGUI scrollText;
-
+    private GameObject currentMiniGame;
 
 
     private void Awake()
@@ -48,21 +43,22 @@ public class MiniGameStart : MonoBehaviour
 
     private void OnCombatStartButtonClicked()
     {
-        GameObject obj = Instantiate(miniGamePrefab, canvas.transform);
+
+        currentMiniGame = Instantiate(miniGamePrefab, canvas.transform);
 
         Image image = Instantiate(blackScreen, canvas.transform);
         //make black screen visible
         image.DOFade(1f, blackScreenVisibilityTime)
-            .OnComplete(() => ActivateMiniGame(image,obj));
+            .OnComplete(() => ActivateMiniGame(image, currentMiniGame));
     }
 
     void ActivateMiniGame(Image image,GameObject miniGame)
     {
-        miniGame.SetActive(true);   
+        miniGame.SetActive(true);
         //assign enemy
         EventManager<EnemySO>.TriggerEvent(EventKey.ENEMY_FOUND, enemy);
 
-        startingPanel.SetActive(false);
+        panel.SetActive(false);
         //Make black screen invisible
         image.DOFade(0f, blackScreenVisibilityTime)
             .OnComplete(() => Destroy(image));
@@ -77,27 +73,34 @@ public class MiniGameStart : MonoBehaviour
             enemyNameText.text = enemy.Name;
             scrollText.text = enemy.EnemyInfo;
             //Change background image of combat starting screen
-            BackgroundImageSprite.sprite = BackgroundManager.Instance.GetBackgroundImage().sprite;
+            SetBackgroundImage();
 
-            startingPanel.SetActive(true);
+            panel.SetActive(true);
             StartCoroutine(ShowTextAfterDelay());
         }
     }
 
     private IEnumerator ShowTextAfterDelay()
-    {
+    {   
         yield return new WaitForSeconds(timeToBeVisibleAfterAnimation);
         scrollText.DOFade(1f, scrollTextVisibilityTime);
     }
 
-
     private void OnEnable()
     {
         EventManager<ScenarioSO>.Subscribe(EventKey.SELECT_SCENARIO, MiniGameStart_OnScenarioSelected);
+        EventManager<Combat>.Subscribe(EventKey.MiniGame_Finished, MiniGameStart_MiniGameFinished);
     }
 
-    private void OnDisable() 
+    private void MiniGameStart_MiniGameFinished(Combat combat)
+    {
+        Destroy(currentMiniGame);
+    }
+
+    private void OnDisable()
     {
         EventManager<ScenarioSO>.Unsubscribe(EventKey.SELECT_SCENARIO, MiniGameStart_OnScenarioSelected);
+        EventManager<Combat>.Unsubscribe(EventKey.MiniGame_Finished, MiniGameStart_MiniGameFinished);
     }
+
 }

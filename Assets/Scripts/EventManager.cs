@@ -59,4 +59,6 @@ public enum EventKey
     ENEMY_FOUND,
     STAFF_FOUND,
     ScenarioCard_Flipped,
+    MiniGame_Finished,
+    Player_Died
 }
