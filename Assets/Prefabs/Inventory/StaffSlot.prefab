@@ -105,8 +105,8 @@ RectTransform:
   m_GameObject: {fileID: 1708442738609225333}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.05, y: 1.05, z: 1.05}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 653060980762031143}
   - {fileID: 1708442738117990868}
@@ -171,9 +171,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   count: {fileID: 799447439101674911}
   itemImage: {fileID: 1708442738117990869}
-  lootItemTooltipPrefab: {fileID: 0}
+  lootItemTooltipPrefab: {fileID: 7331376229233369467, guid: 77bcdf3b3c9cd2d458575e90c3f35668, type: 3}
   staffTooltipPrefab: {fileID: 8292884168081714818, guid: 0b10cfd1245b8fb4e887cb9a6e0f70d3, type: 3}
-  offSet: {x: -470, y: 110}
+  offSet: {x: 80, y: 200}
   closeButtonPanel: {fileID: 3006068881417344209, guid: 9b1541ecc7790334190477a4c1badb7f, type: 3}
 --- !u!114 &-8237214393498496049
 MonoBehaviour:

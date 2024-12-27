@@ -39,7 +39,7 @@ public class RewardItemPanel : MonoBehaviour
     {
         itemName.text = item.ItemName;
         itemExplanation.text = item.ItemExplanation;
-        backgroundColor.color = ItemQualityColor.GetColor(item.ItemQuality);
+        backgroundColor.color = ItemQualityColor.Instance.GetColor(item.ItemQuality);
         itemImage.sprite = item.ItemSprite;
         itemImage.SetNativeSize();
     }

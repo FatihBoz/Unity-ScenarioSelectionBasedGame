@@ -21,7 +21,7 @@ MonoBehaviour:
     easily because
 
     it was rotten.'
-  image: {fileID: 21300000, guid: 551533d2baa949e48bfd443417d1021a, type: 3}
+  image: {fileID: 21300000, guid: f39011110d2dffb4dbd90666b597987f, type: 3}
   nextOptions:
   - {fileID: 11400000, guid: ab69f5ed2bc26a243ad0f7c543e7fae1, type: 2}
   - {fileID: 11400000, guid: b1c17ba5fd37c8f4fbd91b394b3223cc, type: 2}

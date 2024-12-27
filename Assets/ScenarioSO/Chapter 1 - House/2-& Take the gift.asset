@@ -26,7 +26,7 @@ MonoBehaviour:
 
     time
     in your life.'
-  image: {fileID: 21300000, guid: c73821859b12f6a4481cf9f1ca7e3981, type: 3}
+  image: {fileID: 21300000, guid: 546b1548bfe07524a99f835c74957fd8, type: 3}
   nextOptions:
   - {fileID: 11400000, guid: ba24e4973a8950b41bb0a9a3205462e0, type: 2}
   - {fileID: 11400000, guid: b10b01eb3eede424d8ca018b23d9ab1f, type: 2}

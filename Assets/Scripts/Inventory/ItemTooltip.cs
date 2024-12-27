@@ -4,8 +4,10 @@ using UnityEngine.UI;
 
 public abstract class ItemTooltip : MonoBehaviour
 {
+    [Header("TEXT")]
     [SerializeField] protected TextMeshProUGUI itemName;
     [SerializeField] protected TextMeshProUGUI itemExplanation;
+    [Header("BUTTON")]
     [SerializeField] protected Button tooltipPrimaryButton;
     [SerializeField] protected Button tooltipDropButton;
 
@@ -15,6 +17,11 @@ public abstract class ItemTooltip : MonoBehaviour
 
     protected virtual void Start()
     {
+        if (tooltipDropButton == null || tooltipPrimaryButton == null)
+        {
+            return;
+        }
+
         tooltipDropButton.onClick.AddListener(OnItemDropButtonClicked);
         tooltipPrimaryButton.onClick.AddListener(OnPrimaryButtonClicked);
     }
@@ -24,7 +31,7 @@ public abstract class ItemTooltip : MonoBehaviour
     {
         currentItem = item;
         itemName.text = item.name;
-        itemName.color = ItemQualityColor.GetColor(item.ItemQuality);
+        itemName.color = ItemQualityColor.Instance.GetColor(item.ItemQuality);
         itemExplanation.text = item.ItemExplanation;
     }
 
@@ -32,19 +39,7 @@ public abstract class ItemTooltip : MonoBehaviour
     {
         EventManager<ItemSO>.TriggerEvent(EventKey.ITEM_DROPPED, item);
         ItemSlot.tooltipIsActive = false;
-        DestroyCloseButtonPanel();
         Destroy(this.gameObject);
-    }
-
-
-    protected void OnItemDropButtonClicked()
-    {
-        DropItem(currentItem);
-    }
-
-    protected void DestroyCloseButtonPanel()
-    {
-        Destroy(tooltipCloseButtonPanel.gameObject);
     }
 
     public void SetCloseTooltipButtonPanel(Button closeButtonPanel)
@@ -52,6 +47,17 @@ public abstract class ItemTooltip : MonoBehaviour
         tooltipCloseButtonPanel = closeButtonPanel;
     }
 
+    protected void DestroyCloseButtonPanel()
+    {
+        Destroy(tooltipCloseButtonPanel.gameObject);
+    }
+
+
+    protected void OnItemDropButtonClicked()
+    {
+        DestroyCloseButtonPanel();
+        DropItem(currentItem);
+    }
 
     public abstract void OnPrimaryButtonClicked();
 }

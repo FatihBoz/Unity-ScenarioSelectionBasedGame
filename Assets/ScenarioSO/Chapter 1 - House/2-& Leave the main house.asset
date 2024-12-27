@@ -19,18 +19,17 @@ MonoBehaviour:
 
     dedicated to the training
     of children in Deymar House.'
-  cardText: 'Leave the
-
-    main house'
+  cardText: "Leave the \nmain house"
   backText: 'The gift could
 
     be something
 
     useful.'
-  image: {fileID: 21300000, guid: c73821859b12f6a4481cf9f1ca7e3981, type: 3}
+  image: {fileID: 21300000, guid: 32f79a0d038db174ab428fba5da9a73d, type: 3}
   nextOptions:
-  - {fileID: 11400000, guid: b10b01eb3eede424d8ca018b23d9ab1f, type: 2}
-  - {fileID: 11400000, guid: ba24e4973a8950b41bb0a9a3205462e0, type: 2}
+  - {fileID: 11400000, guid: 56062ef310e58114bae9868593e51bc3, type: 2}
+  - {fileID: 11400000, guid: db62528355b54fd4f81ffc34b8b62e33, type: 2}
+  - {fileID: 11400000, guid: 410dee65d46b2ff4ba55cd56c9a3f164, type: 2}
   rewardPrefab: {fileID: 6065419709317970287, guid: 79e5d141b12c56a458d3cc227b4d078e, type: 3}
   location: 1
   hasEnemy: 0

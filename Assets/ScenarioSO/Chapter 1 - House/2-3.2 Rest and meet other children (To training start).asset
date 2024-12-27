@@ -22,12 +22,16 @@ MonoBehaviour:
   cardText: 'Rest and meet
 
     other children'
-  backText: 'You got along
+  backText: 'You sleep for
 
-    with the others
+    a few hours
 
-    right away.'
-  image: {fileID: 21300000, guid: fe5fcf04b070a724d961beaa943dce01, type: 3}
+    and then go to
+
+    meet other
+
+    children.'
+  image: {fileID: 21300000, guid: f7c4fa7e257e3274ba4abdfd2f2494c5, type: 3}
   nextOptions:
   - {fileID: 11400000, guid: d2f3c8165216ff647b253db6a02f8844, type: 2}
   rewardPrefab: {fileID: 6065419709317970287, guid: 79e5d141b12c56a458d3cc227b4d078e, type: 3}

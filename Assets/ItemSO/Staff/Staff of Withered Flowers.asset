@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 589b1c72d37512943924120fe2e6e1a0, type: 3}
   m_Name: Staff of Withered Flowers
   m_EditorClassIdentifier: 
-  itemExplanation: "Nullifies the damage you\ntake with %10 chance.\r"
+  itemExplanation: "Nullifies the damage you take with %10 chance.\r"
   itemName: Staff of Withered Flowers
   tier: 1
   itemSprite: {fileID: 21300000, guid: 2a87853d4d3b13443b3d0e606d8c7066, type: 3}

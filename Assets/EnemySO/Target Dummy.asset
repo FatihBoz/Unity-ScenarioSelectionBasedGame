@@ -18,7 +18,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 32747b80d449050439a4b3169609b94f, type: 2}
   - {fileID: 11400000, guid: 7a9eb56d44fd42e41b808257b0125391, type: 2}
   - {fileID: 11400000, guid: 9c59426969e3f4047869285d101cf1e5, type: 2}
-  lootItemDrop: []
+  lootItemDrop:
+  - {fileID: 11400000, guid: 7163931c849c16a49af3b86c1d0707a9, type: 2}
+  - {fileID: 11400000, guid: 7163931c849c16a49af3b86c1d0707a9, type: 2}
   maxHp: 50
   maxMana: 20
   manaRegenPerSecond: 20

@@ -12,9 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 589b1c72d37512943924120fe2e6e1a0, type: 3}
   m_Name: Radiant Light Staff
   m_EditorClassIdentifier: 
-  itemExplanation: 'Recovers %30 health in every
-
-    certain number of choices.'
+  itemExplanation: Recovers %30 health in every certain number of choices.
   itemName: Radiant Light Staff
   tier: 3
   itemSprite: {fileID: 21300000, guid: d63c1405cf420ae4eb2fe5ed93b48b29, type: 3}

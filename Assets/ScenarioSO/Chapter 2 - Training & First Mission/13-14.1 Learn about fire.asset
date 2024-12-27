@@ -22,7 +22,7 @@ MonoBehaviour:
 
     fire'
   backText: Fire
-  image: {fileID: 21300000, guid: 510e12e4cfb32044896056073a0a9917, type: 3}
+  image: {fileID: 21300000, guid: edf7bee3a2e8a9a469b847e21e302f75, type: 3}
   nextOptions:
   - {fileID: 11400000, guid: 1ae2fcdc5e7147e4b8884d2f3359155e, type: 2}
   - {fileID: 11400000, guid: 79d49af0812a374478d7082c70522fc5, type: 2}

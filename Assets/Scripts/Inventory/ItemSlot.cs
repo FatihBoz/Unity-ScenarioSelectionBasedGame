@@ -10,9 +10,9 @@ public class ItemSlot : MonoBehaviour
 
     [SerializeField] private Image itemImage;
 
-    [SerializeField] private GameObject lootItemTooltipPrefab;  // For general items
+    [SerializeField] private GameObject lootItemTooltipPrefab;
 
-    [SerializeField] private GameObject staffTooltipPrefab;  // For staffs specifically
+    [SerializeField] private GameObject staffTooltipPrefab;
 
     [SerializeField] private Vector2 offSet;
 
@@ -22,13 +22,14 @@ public class ItemSlot : MonoBehaviour
     private Canvas canvas;
     private Button itemSlot;
     private ItemSO currentItem;
+    private RectTransform rectTransform;
 
 
 
     private void Awake()
     {
-        itemSlot = GetComponent<Button>();
-       
+       itemSlot = GetComponent<Button>();
+       rectTransform = GetComponent<RectTransform>();
     }
 
     private void Start()
@@ -46,7 +47,6 @@ public class ItemSlot : MonoBehaviour
         if (currentItem.ItemType == ItemType.Staff)
         {
             OpenTooltip(staffTooltipPrefab);
-            print("staffa girdi");
         }
         else if(currentItem.ItemType == ItemType.LootItem)
         {
@@ -64,6 +64,8 @@ public class ItemSlot : MonoBehaviour
         GameObject tooltipInstance = Instantiate(tooltipPrefab, canvas.transform);
         //Get RectTransform component
         RectTransform rt = tooltipInstance.GetComponent<RectTransform>();
+
+        rt.SetParent(rectTransform.parent);
         // set its values with offSet
         rt.anchoredPosition = GetComponent<RectTransform>().anchoredPosition + offSet;
 
@@ -71,11 +73,14 @@ public class ItemSlot : MonoBehaviour
         {
             //Set the general ItemSO information
             itemTooltip.SetItem(currentItem);
-            itemTooltip.SetCloseTooltipButtonPanel(b);
+
+            itemTooltip.SetCloseTooltipButtonPanel(b); //assign panel
+            rt.SetParent(canvas.transform);
+
         }
 
         tooltipIsActive = true;
-        SetCloseButtonPanel(tooltipInstance,b);
+        SetCloseButtonPanel(tooltipInstance,b); //Add listener
     }
 
 
@@ -92,7 +97,7 @@ public class ItemSlot : MonoBehaviour
     }
 
 
-    public void SetItem(ItemSO item,int itemCount)
+    public void SetItem(ItemSO item,int itemCount = 1)
     {
         currentItem = item;
         itemImage.sprite = item.ItemSprite;
@@ -108,4 +113,6 @@ public class ItemSlot : MonoBehaviour
     {
         this.canvas = canvas;
     }
+
+    public ItemSO CurrentItem => currentItem;
 }

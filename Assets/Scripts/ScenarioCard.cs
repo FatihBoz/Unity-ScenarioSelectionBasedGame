@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class ScenarioCard : MonoBehaviour
@@ -33,7 +34,7 @@ public class ScenarioCard : MonoBehaviour
             DestroyImmediate(this.gameObject);
             //This line does not rely on this game object and will be executed after destroying
             ScenarioManager.instance.SelectScenario(Scenario);
-            //!But this is not the best approach ig.Consider it as risky
+            //But this is not the best approach ig.Consider it as risky
         }
     }
 }

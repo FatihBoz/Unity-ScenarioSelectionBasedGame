@@ -19,7 +19,7 @@ MonoBehaviour:
   backText: '
 
 '
-  image: {fileID: 21300000, guid: 551533d2baa949e48bfd443417d1021a, type: 3}
+  image: {fileID: 21300000, guid: abc3209d13639244f8eb1815921bdccf, type: 3}
   nextOptions: []
   rewardPrefab: {fileID: 6065419709317970287, guid: 79e5d141b12c56a458d3cc227b4d078e, type: 3}
   location: 1

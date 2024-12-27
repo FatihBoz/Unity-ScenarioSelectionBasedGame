@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour
 {
+    [Header("Transforms")]
     [SerializeField] private Transform staffInventoryUI;
     [SerializeField] private Transform lootItemInventoryUI;
 
@@ -34,7 +35,6 @@ public class InventoryUI : MonoBehaviour
             GameObject obj = Instantiate(staffSlotPrefab, staffInventoryUI);
             if (obj.TryGetComponent<ItemSlot>(out var itemSlot))
             {
-                print("Staff Inventory UI'a girdi");
                 itemSlot.SetItem(staff, dict[staff]);
                 itemSlot.SetCanvas(canvas);
             }
@@ -65,7 +65,7 @@ public class InventoryUI : MonoBehaviour
     {
         equippedStaffImage.sprite = staff.ItemSprite;
         equippedStaffName.text = staff.ItemName;
-        equippedStaffName.color = ItemQualityColor.GetColor(staff.ItemQuality);
+        equippedStaffName.color = ItemQualityColor.Instance.GetColor(staff.ItemQuality);
         equippedStaffExplanation.text = staff.ItemExplanation;
 
         if (!equippedStaffImage.IsActive())
@@ -78,23 +78,30 @@ public class InventoryUI : MonoBehaviour
 
     public void Open_Close_Inventory()
     {
-        //if object is not active, make it active and vice versa
+        //if object is not active, make it active or vice versa
         inventory.SetActive(!inventory.activeSelf);
     }
 
     private void OnEnable()
     {
-        EventManager<Dictionary<ItemSO, int>>.Subscribe(EventKey.LootItem_Inventory_Update, InventoryUI_OnLootItemInventoryUpdated);
-        EventManager<Dictionary<ItemSO,int>>.Subscribe(EventKey.Staff_Inventory_Update, InventoryUI_OnStaffInventoryUpdated);
+        EventManager<Dictionary<ItemSO, int>>
+            .Subscribe(EventKey.LootItem_Inventory_Update, InventoryUI_OnLootItemInventoryUpdated);
+
+        EventManager<Dictionary<ItemSO,int>>
+            .Subscribe(EventKey.Staff_Inventory_Update, InventoryUI_OnStaffInventoryUpdated);
+
         EventManager<ItemSO>.Subscribe(EventKey.Equipped_Staff_Changed, InventoryUI_OnEquippedStaffChanged);
     }
 
 
-
     private void OnDisable()
     {
-        EventManager<Dictionary<ItemSO, int>>.Unsubscribe(EventKey.LootItem_Inventory_Update, InventoryUI_OnLootItemInventoryUpdated);
-        EventManager<Dictionary<ItemSO, int>>.Unsubscribe(EventKey.Staff_Inventory_Update, InventoryUI_OnStaffInventoryUpdated);
+        EventManager<Dictionary<ItemSO, int>>
+            .Unsubscribe(EventKey.LootItem_Inventory_Update, InventoryUI_OnLootItemInventoryUpdated);
+
+        EventManager<Dictionary<ItemSO, int>>
+            .Unsubscribe(EventKey.Staff_Inventory_Update, InventoryUI_OnStaffInventoryUpdated);
+
         EventManager<ItemSO>.Unsubscribe(EventKey.Equipped_Staff_Changed, InventoryUI_OnEquippedStaffChanged);
     }
 }

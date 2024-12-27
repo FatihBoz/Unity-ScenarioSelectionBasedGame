@@ -50,11 +50,6 @@ public class SettingsChain : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void OnDrag(PointerEventData eventData)
     {
-        //if (!canPull)
-        //{
-        //    return;
-        //}
-
         Vector2 dragCurrentPosition = eventData.position;
         float dragDistance = dragStartPosition.y - dragCurrentPosition.y;
 
@@ -86,11 +81,6 @@ public class SettingsChain : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        //if (canPull)
-        //{
-        //    StartCoroutine(SmoothReturn());
-        //}
-
         StartCoroutine(SmoothReturn());
     }
 

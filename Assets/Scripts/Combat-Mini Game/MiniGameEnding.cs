@@ -48,7 +48,7 @@ public class MiniGameEnding : MiniGamePanel
                 if (tempText.TryGetComponent<TextMeshProUGUI>(out var itemName))
                 {
                     itemName.text = "*"+item.ItemName;
-                    itemName.color = ItemQualityColor.GetColor(item.ItemQuality);
+                    itemName.color = ItemQualityColor.Instance.GetColor(item.ItemQuality);
                 }
 
 

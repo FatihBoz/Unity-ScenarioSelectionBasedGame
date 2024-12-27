@@ -12,9 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 589b1c72d37512943924120fe2e6e1a0, type: 3}
   m_Name: Sunfire Serpent Staff
   m_EditorClassIdentifier: 
-  itemExplanation: 'Reduces the damage you
-
-    take by %20.'
+  itemExplanation: Reduces the damage you take by %20.
   itemName: Sunfire Serpent Staff
   tier: 2
   itemSprite: {fileID: 21300000, guid: a14db73ec9eeba348866216adc72c9c6, type: 3}

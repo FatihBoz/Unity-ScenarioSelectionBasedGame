@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillName: Aero Slash
   skillElement: 4
-  skillSprite: {fileID: 0}
+  skillSprite: {fileID: 21300000, guid: cbb4eeee8679f1c41957e11d0d6b8bd1, type: 3}
   explosionPrefab: {fileID: 5298797472642323716, guid: 7d423af35893cc64e934e5ffd62725d1, type: 3}
   manaToCast: 20
   damage: 7.5

@@ -23,7 +23,7 @@ MonoBehaviour:
 
     earth'
   backText: Earth
-  image: {fileID: 21300000, guid: 78de099ac796bf74684896cfe21945b8, type: 3}
+  image: {fileID: 21300000, guid: 9f392b6b8d7a89646ba7d6af9f94a372, type: 3}
   nextOptions:
   - {fileID: 11400000, guid: aee9ef87d6b8fc844a664f3d20769e68, type: 2}
   - {fileID: 11400000, guid: 1ae2fcdc5e7147e4b8884d2f3359155e, type: 2}

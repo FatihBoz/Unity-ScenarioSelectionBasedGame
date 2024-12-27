@@ -32,7 +32,7 @@ MonoBehaviour:
 
     roaming
     the forest.'
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 8a4894cec9df78044a5013ba79ab4207, type: 3}
   nextOptions:
   - {fileID: 11400000, guid: bd079f3edde98f645b0e9bc0e202cdc7, type: 2}
   - {fileID: 11400000, guid: abd4ed1ee56813646a58f3fe4f7f75a1, type: 2}

@@ -34,7 +34,7 @@ MonoBehaviour:
     from there
 
     immediately.'
-  image: {fileID: 21300000, guid: 551533d2baa949e48bfd443417d1021a, type: 3}
+  image: {fileID: 21300000, guid: 12c99b2ee41b3ef4f8f3e140f54b7dd6, type: 3}
   nextOptions:
   - {fileID: 11400000, guid: d2f3c8165216ff647b253db6a02f8844, type: 2}
   rewardPrefab: {fileID: 6065419709317970287, guid: 79e5d141b12c56a458d3cc227b4d078e, type: 3}

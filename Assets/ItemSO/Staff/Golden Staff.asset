@@ -12,9 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 589b1c72d37512943924120fe2e6e1a0, type: 3}
   m_Name: Golden Staff
   m_EditorClassIdentifier: 
-  itemExplanation: 'Nullifies the damage you
-
-    take with %20 chance.'
+  itemExplanation: Nullifies the damage you take with %20 chance.
   itemName: Golden Staff
   tier: 2
   itemSprite: {fileID: 21300000, guid: d74e6ef20d53db84a8b54e8514ef02d8, type: 3}

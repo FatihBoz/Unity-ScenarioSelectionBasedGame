@@ -12,6 +12,8 @@ public class ItemSO : ScriptableObject
     [Header("INTEGER VALUES")]
     [SerializeField] private int tier;
 
+    [SerializeField] private int coinNeedToPurchase;
+
 
     [Header("OTHER")]
     [SerializeField] private Sprite itemSprite;
@@ -34,6 +36,8 @@ public class ItemSO : ScriptableObject
 
     public ItemType ItemType { get => itemType; }
 
+    public int CoinNeedToPurchase { get => coinNeedToPurchase; }
+
     public ItemQuality ItemQuality
     {
         get
@@ -42,6 +46,8 @@ public class ItemSO : ScriptableObject
             return (ItemQuality)Mathf.Clamp(tier, 0, System.Enum.GetValues(typeof(ItemQuality)).Length - 1);
         }
     }
+
+
 }
 
 public enum ItemQuality

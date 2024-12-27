@@ -32,7 +32,7 @@ MonoBehaviour:
 
     its
     attacks.'
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: b76d9a1fe23dc7d46a6910c6e2fae58a, type: 3}
   nextOptions:
   - {fileID: 11400000, guid: 30f93b3bc9f6b3d4a93371ae39282bc5, type: 2}
   rewardPrefab: {fileID: 6065419709317970287, guid: 79e5d141b12c56a458d3cc227b4d078e, type: 3}

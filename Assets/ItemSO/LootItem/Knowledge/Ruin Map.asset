@@ -12,16 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 589b1c72d37512943924120fe2e6e1a0, type: 3}
   m_Name: Ruin Map
   m_EditorClassIdentifier: 
-  itemExplanation: 'A tattered map that outlines
+  itemExplanation: 'A tattered map that
 
-    the locations of ancient ruins,
+    outlines the locations of
 
-    providing
+    ancient
+    ruins, providing
+
     hints of secrets
 
     waiting to be uncovered.'
   itemName: Ruin Map
   tier: 2
+  coinNeedToPurchase: 0
   itemSprite: {fileID: 21300000, guid: b09600ca6103b0f408f2dc9c3081222a, type: 3}
   itemEffectPrefab: {fileID: 817800730915581022, guid: 38a502a44c2ea2149b2c1a5421d87b22, type: 3}
   itemType: 1

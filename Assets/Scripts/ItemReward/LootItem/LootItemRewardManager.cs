@@ -47,7 +47,7 @@ public class LootItemRewardManager : MonoBehaviour
         if (rewardPanel.transform.Find(textComponentName).TryGetComponent<TextMeshProUGUI>(out var text))
         {
             text.text = item.ItemName;
-            text.color = ItemQualityColor.GetColor(item.ItemQuality);
+            text.color = ItemQualityColor.Instance.GetColor(item.ItemQuality);
         }
 
     }

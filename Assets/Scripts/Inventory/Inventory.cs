@@ -21,7 +21,6 @@ public class Inventory : MonoBehaviour
         // Check if the item is a StaffSO
         if (item.ItemType == ItemType.Staff)
         {
-            print("Add Item'a girdi");
             AddItemToInventory(item, staffInventory,maxStaffSlot,count);
             UpdateStaffUI();
         }

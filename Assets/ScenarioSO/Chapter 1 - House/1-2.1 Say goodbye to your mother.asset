@@ -15,7 +15,7 @@ MonoBehaviour:
   narratorText: 'Before leaving, the butler said that your father
 
     has a gift
-    for you and handed you a wrapped item.'
+    for you and handed you a long thin gift box.'
   cardText: 'Say goodbye to
 
     your mother'
@@ -24,7 +24,7 @@ MonoBehaviour:
     to see you off at
 
     the castle gate.'
-  image: {fileID: 21300000, guid: c73821859b12f6a4481cf9f1ca7e3981, type: 3}
+  image: {fileID: 21300000, guid: b24ab7e7eb6699a43af78de32a843940, type: 3}
   nextOptions:
   - {fileID: 11400000, guid: 500442ee53e428146aca00b691d18f30, type: 2}
   - {fileID: 11400000, guid: 4125756dbf596514887fa90d0c2decff, type: 2}
@@ -32,4 +32,4 @@ MonoBehaviour:
   location: 1
   hasEnemy: 0
   enemy: {fileID: 0}
-  lootItemType: 0
+  lootItemType: 2

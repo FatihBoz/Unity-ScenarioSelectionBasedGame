@@ -17,7 +17,6 @@ public class ItemHolderSO : ScriptableObject
         return items[UnityEngine.Random.Range(0, items.Count)];
     }
 
-
     public ItemSO SelectItem(LootItemEffectType itemEffectType) //for loot items
     {
         var items = GetItemsByTier(DetermineTier());
@@ -40,6 +39,25 @@ public class ItemHolderSO : ScriptableObject
             ? tempList[UnityEngine.Random.Range(0, tempList.Count)]
             //if list is empty return null
             : null;
+    }
+
+    // itemTierRange = 1 means only items with equal level to player can be selected.
+    // itemTierRange = 2 means items with equal or +1 to the player level.
+    public ItemSO SelectItemForTrader(int itemTierRange)
+    {
+        if (itemTierRange + DetermineTier() > 4)
+        {
+            return null;
+        }
+
+        List<ItemSO> tempList = new();
+
+        for (int i = 0; i < itemTierRange; i++)
+        {
+            tempList.AddRange(GetItemsByTier(DetermineTier() + i));
+        }
+
+        return tempList[UnityEngine.Random.Range(0, tempList.Count)];
     }
 
 
@@ -68,5 +86,4 @@ public enum LootItemEffectType
     Level,
     Healer,
     MaxHealth,
-    MaxMana
 }

@@ -32,7 +32,7 @@ MonoBehaviour:
 
     surround
     you.'
-  image: {fileID: 21300000, guid: 551533d2baa949e48bfd443417d1021a, type: 3}
+  image: {fileID: 21300000, guid: 3dea3830edcde334ba032ef7340c07dc, type: 3}
   nextOptions:
   - {fileID: 11400000, guid: c0961e765d720e54dbd76375b657fe7a, type: 2}
   - {fileID: 11400000, guid: 47604788e8c8ef94991fffbab08bcc41, type: 2}
