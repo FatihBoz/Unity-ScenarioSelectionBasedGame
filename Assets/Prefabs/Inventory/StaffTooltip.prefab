@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8292884168077349248}
   - component: {fileID: 8292884168077349249}
   - component: {fileID: 8292884168077349250}
+  - component: {fileID: 2212930579237203135}
   m_Layer: 5
   m_Name: DropButton
   m_TagString: Untagged
@@ -121,6 +122,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2212930579237203135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8292884168077349252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9df3ab7e876e8974ba74f5b8ecca3c8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleFactor: 1.05
 --- !u!1 &8292884168081714818
 GameObject:
   m_ObjectHideFlags: 0
@@ -883,6 +897,7 @@ GameObject:
   - component: {fileID: 8292884169099886544}
   - component: {fileID: 8292884169099886545}
   - component: {fileID: 8292884169099886546}
+  - component: {fileID: 7538930573733097135}
   m_Layer: 5
   m_Name: EquipButton
   m_TagString: Untagged
@@ -992,6 +1007,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7538930573733097135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8292884169099886548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9df3ab7e876e8974ba74f5b8ecca3c8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleFactor: 1.05
 --- !u!1 &8292884169157221807
 GameObject:
   m_ObjectHideFlags: 0

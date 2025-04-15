@@ -36,7 +36,7 @@ public class DisplayScenarioCard : MonoBehaviour
         for (int i = 0; i < scenario.GetNextOptions().Count; i++)
         {
             scenarioCardHolder.GetChild(i).gameObject.SetActive(true);
-            scenarioCardHolder.GetChild(i).GetComponent<ScenarioCard>().Display(scenario.GetNextOptions()[i]);
+            scenarioCardHolder.GetChild(i).GetComponentInChildren<ScenarioCard>().Display(scenario.GetNextOptions()[i]);
         }
     }
 

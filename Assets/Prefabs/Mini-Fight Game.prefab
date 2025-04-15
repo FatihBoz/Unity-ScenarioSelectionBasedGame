@@ -2334,6 +2334,7 @@ GameObject:
   - component: {fileID: 4608202931722746842}
   - component: {fileID: 4608202931722746840}
   - component: {fileID: 4608202931722746841}
+  - component: {fileID: 752046951830322503}
   m_Layer: 5
   m_Name: WaterSkill
   m_TagString: Untagged
@@ -2400,6 +2401,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &752046951830322503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4608202931722746843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9df3ab7e876e8974ba74f5b8ecca3c8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleFactor: 1.05
 --- !u!1 &4608202931758558414
 GameObject:
   m_ObjectHideFlags: 0
@@ -4342,6 +4356,7 @@ GameObject:
   - component: {fileID: 4608202932564769067}
   - component: {fileID: 4608202932564769065}
   - component: {fileID: 4608202932564769066}
+  - component: {fileID: 1951496255062935307}
   m_Layer: 5
   m_Name: WindSkill
   m_TagString: Untagged
@@ -4408,6 +4423,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1951496255062935307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4608202932564769076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9df3ab7e876e8974ba74f5b8ecca3c8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleFactor: 1.05
 --- !u!1 &4608202932583408022
 GameObject:
   m_ObjectHideFlags: 0
@@ -4554,6 +4582,7 @@ GameObject:
   - component: {fileID: 4608202932629300436}
   - component: {fileID: 4608202932629300426}
   - component: {fileID: 4608202932629300427}
+  - component: {fileID: 861550692425420770}
   m_Layer: 5
   m_Name: EarthSkill
   m_TagString: Untagged
@@ -4620,6 +4649,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &861550692425420770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4608202932629300437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9df3ab7e876e8974ba74f5b8ecca3c8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleFactor: 1.05
 --- !u!1 &4608202932667442054
 GameObject:
   m_ObjectHideFlags: 0
@@ -4723,6 +4765,7 @@ GameObject:
   - component: {fileID: 4608202932756516276}
   - component: {fileID: 4608202932756516266}
   - component: {fileID: 4608202932756516267}
+  - component: {fileID: 7581876617936363246}
   m_Layer: 5
   m_Name: FireSkill
   m_TagString: Untagged
@@ -4789,6 +4832,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7581876617936363246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4608202932756516277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9df3ab7e876e8974ba74f5b8ecca3c8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleFactor: 1.05
 --- !u!1 &4608202932786858370
 GameObject:
   m_ObjectHideFlags: 0

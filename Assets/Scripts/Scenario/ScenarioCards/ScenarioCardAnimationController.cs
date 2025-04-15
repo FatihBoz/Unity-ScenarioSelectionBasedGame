@@ -12,17 +12,14 @@ public class ScenarioCardAnimationController : MonoBehaviour
     [SerializeField] private GameObject frontContent;
     [SerializeField] private Sprite emptyCardBack;
 
-    private Animator animator;
-    private Image img;
+    [SerializeField] private Animator animator;
+    [SerializeField] private Image img;
     private readonly float delayAmount = .25f;
 
     [SerializeField] private AudioClip cardSF;
 
     private void Awake()
     {
-        animator = GetComponent<Animator>();
-        img = GetComponent<Image>();
-
         canFlip = true;
         isFlipped = false;
     }
@@ -46,7 +43,7 @@ public class ScenarioCardAnimationController : MonoBehaviour
         img.sprite = emptyCardBack;
         backContent.SetActive(true);
 
-        yield return new WaitForSeconds(delay);
+        yield return new WaitForSeconds(delay + 0.1f);
         isFlipped = true;
 
         EventManager<ScenarioCard>.TriggerEvent(EventKey.ScenarioCard_Flipped, GetComponent<ScenarioCard>());
