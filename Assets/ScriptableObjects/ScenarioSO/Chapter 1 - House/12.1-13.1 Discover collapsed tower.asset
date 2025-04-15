@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b1a98eb64d26d44f8738a83f8b57706, type: 3}
+  m_Name: 12.1-13.1 Discover collapsed tower
+  m_EditorClassIdentifier: 
+  narratorText: "There is nothing inside but there are signs that someone or \nsomething
+    has been trying to dig through the rubble."
+  cardText: 'Discover
+
+    collapsed tower'
+  backText: 'One of the castle''s
+
+    old towers has
+
+    collapsed, it might
+
+    be
+    dangerous to
+
+    go in there.'
+  image: {fileID: 21300000, guid: 36c3b8b4bf6ed3f44a63402a87b8cfb6, type: 3}
+  nextOptions:
+  - {fileID: 11400000, guid: bfecd4bd056cfb94e9913dfa6b67ec59, type: 2}
+  - {fileID: 11400000, guid: 74b44a7489ef0bc4f86453016acb6beb, type: 2}
+  rewardPrefab: {fileID: 6065419709317970287, guid: 79e5d141b12c56a458d3cc227b4d078e, type: 3}
+  location: 3
+  hasEnemy: 0
+  enemy: {fileID: 0}
+  lootItemType: 0
+  merchantEncounter: 0

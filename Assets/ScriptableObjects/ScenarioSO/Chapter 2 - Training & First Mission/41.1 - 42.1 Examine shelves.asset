@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b1a98eb64d26d44f8738a83f8b57706, type: 3}
+  m_Name: 41.1 - 42.1 Examine shelves
+  m_EditorClassIdentifier: 
+  narratorText: 'You picked up items that might interest you. When you
+
+    stepped
+    onto the porch, the old magician''s staff in his hand
+
+    seemed more interesting
+    than ever to you.'
+  cardText: Examine shelves
+  backText: 
+  image: {fileID: -1687694460, guid: ee479e0e2d0ccc04aaac9f6463335bde, type: 3}
+  nextOptions:
+  - {fileID: 11400000, guid: 942411349bd012d4bb67583061c58540, type: 2}
+  - {fileID: 11400000, guid: b1cfc42e32c97614d9997c78baf88d2f, type: 2}
+  rewardPrefab: {fileID: 6065419709317970287, guid: 79e5d141b12c56a458d3cc227b4d078e, type: 3}
+  location: 5
+  hasEnemy: 0
+  enemy: {fileID: 0}
+  lootItemType: 3
+  merchantEncounter: 0

@@ -20,4 +20,11 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
+
+    public void OnButtonClicked(string sceneName)
+    {
+        ChangeScene(sceneName);
+        Time.timeScale = 1f;
+    }
+
 }

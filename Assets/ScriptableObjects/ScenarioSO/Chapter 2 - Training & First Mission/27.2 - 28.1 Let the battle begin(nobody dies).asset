@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b1a98eb64d26d44f8738a83f8b57706, type: 3}
+  m_Name: 27.2 - 28.1 Let the battle begin(nobody dies)
+  m_EditorClassIdentifier: 
+  narratorText: 
+  cardText: 'Let the battle
+
+    begin'
+  backText: 'Upon a closer
+
+    look, you see
+
+    that the direwolf
+
+    is in a
+    terrible
+
+    state. Its body
+
+    is covered in
+
+    blood and does
+
+    not
+    even have
+
+    the strength to
+
+    attack you.'
+  image: {fileID: 21300000, guid: f0327c9fc50d56c448ba27487e893f9a, type: 3}
+  nextOptions: []
+  rewardPrefab: {fileID: 6065419709317970287, guid: 79e5d141b12c56a458d3cc227b4d078e, type: 3}
+  location: 5
+  hasEnemy: 1
+  enemy: {fileID: 11400000, guid: 13e220e2093c41d47ae9e7e305cd607d, type: 2}
+  lootItemType: 0
+  merchantEncounter: 0

@@ -99,4 +99,9 @@ public class Dice : MonoBehaviour,IBeginDragHandler, IEndDragHandler,IDragHandle
         return 0;
     }
 
+    public void SetCanvas(Canvas canvas)
+    {
+        miniGameCanvas = canvas;
+    }
+
 }

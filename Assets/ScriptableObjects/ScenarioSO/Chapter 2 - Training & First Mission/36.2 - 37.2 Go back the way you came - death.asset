@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b1a98eb64d26d44f8738a83f8b57706, type: 3}
+  m_Name: 36.2 - 37.2 Go back the way you came - death
+  m_EditorClassIdentifier: 
+  narratorText: 
+  cardText: 'Go back the way
+
+    you came'
+  backText: 'You can''t see
+
+    anything. You
+
+    got lost in the
+
+    darkness
+    and
+
+    never came back.'
+  image: {fileID: -1305931812, guid: 82140363e71da6f40a4a493c4fe810c8, type: 3}
+  nextOptions:
+  - {fileID: 11400000, guid: 23cfb1c6f4124e1498dcec7c41e18d2a, type: 2}
+  rewardPrefab: {fileID: 6915695627217257398, guid: c38a0f4bdb7dca54f952bd231860c202, type: 3}
+  location: 5
+  hasEnemy: 0
+  enemy: {fileID: 0}
+  lootItemType: 0
+  merchantEncounter: 0

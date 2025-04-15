@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b1a98eb64d26d44f8738a83f8b57706, type: 3}
+  m_Name: 12-13 Elemental Balance
+  m_EditorClassIdentifier: 
+  narratorText: 'For an example, fire is an element of high damage,
+
+    also it
+    is strong against the wind. But in return,
+
+    both water and earth overpower
+    fire.'
+  cardText: 'Elemental
+
+    balance?'
+  backText: 'It is the balance
+
+    between strong and
+
+    weak sides of the
+
+    elements
+    and their
+
+    dominance over
+
+    each other.'
+  image: {fileID: 21300000, guid: 013ef5c9028c95d44abac23a6745cc9a, type: 3}
+  nextOptions:
+  - {fileID: 11400000, guid: 1ae2fcdc5e7147e4b8884d2f3359155e, type: 2}
+  - {fileID: 11400000, guid: 79d49af0812a374478d7082c70522fc5, type: 2}
+  - {fileID: 11400000, guid: e04d55a79f520e848badfd5d5e7d311b, type: 2}
+  - {fileID: 11400000, guid: 31651824397c6a74d94b941022fcf250, type: 2}
+  rewardPrefab: {fileID: 6065419709317970287, guid: 79e5d141b12c56a458d3cc227b4d078e, type: 3}
+  location: 3
+  hasEnemy: 0
+  enemy: {fileID: 0}
+  lootItemType: 0
+  merchantEncounter: 0

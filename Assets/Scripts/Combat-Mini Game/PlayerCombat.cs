@@ -103,7 +103,6 @@ public class PlayerCombat : Combat
         if (currentHp < 0)
         {
             EventManager<Combat>.TriggerEvent(EventKey.MiniGame_Finished, this);
-            print("Evente girdi");
         }
     }
     private void OnDisable()

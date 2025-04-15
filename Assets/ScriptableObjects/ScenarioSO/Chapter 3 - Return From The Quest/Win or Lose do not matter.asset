@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b1a98eb64d26d44f8738a83f8b57706, type: 3}
+  m_Name: Win or Lose do not matter
+  m_EditorClassIdentifier: 
+  narratorText: This is the end of Act 1. Thank you for playing our demo.
+  cardText: 'Win or Lose
+
+    do not matter'
+  backText: 
+  image: {fileID: 21300000, guid: b76d9a1fe23dc7d46a6910c6e2fae58a, type: 3}
+  nextOptions:
+  - {fileID: 11400000, guid: d84108770c0c96e439a426f7349e60a4, type: 2}
+  rewardPrefab: {fileID: 6065419709317970287, guid: efd966ef10d81a2418f3efe7f4107b86, type: 3}
+  location: 3
+  hasEnemy: 0
+  enemy: {fileID: 0}
+  lootItemType: 0
+  merchantEncounter: 0

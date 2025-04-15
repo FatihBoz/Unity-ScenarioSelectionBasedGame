@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b1a98eb64d26d44f8738a83f8b57706, type: 3}
+  m_Name: 27.2 - 28.2 Wait for the hunters to die
+  m_EditorClassIdentifier: 
+  narratorText: 'When you popped your head out of the hole, you were
+
+    excited
+    by the sight. Both your team mate and all
+
+    the hunters were lying dead on
+    the ground. The direwolf
+
+    is approaching you.'
+  cardText: 'Wait for the
+
+    hunters to die'
+  backText: 'Painful screams
+
+    and curses filled
+
+    the air. Could it
+
+    be
+    you are
+
+    enjoying this?'
+  image: {fileID: 21300000, guid: e02e6ecc620be254fa7182ef3c1f1b82, type: 3}
+  nextOptions:
+  - {fileID: 11400000, guid: 43cf3e6ce00e7934785ad30b0c0ef04f, type: 2}
+  rewardPrefab: {fileID: 6065419709317970287, guid: 79e5d141b12c56a458d3cc227b4d078e, type: 3}
+  location: 5
+  hasEnemy: 0
+  enemy: {fileID: 0}
+  lootItemType: 0
+  merchantEncounter: 0

@@ -21,6 +21,14 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] private Canvas canvas;
     [SerializeField] private GameObject inventory;
 
+    [Header("Gold Coins")]
+    [SerializeField] private TextMeshProUGUI goldCoinText;
+
+
+    [Header("Other")]
+    [SerializeField] private GameObject exclamationMark;
+
+
     //todo:INVENTORY UPDATE METODLARI TEK METODDA BÝRLEÞTÝRÝLEBÝLÝR.
     private void InventoryUI_OnStaffInventoryUpdated(Dictionary<ItemSO, int> dict)
     {
@@ -39,6 +47,9 @@ public class InventoryUI : MonoBehaviour
                 itemSlot.SetCanvas(canvas);
             }
         }
+
+        //inform the player about new staff
+        exclamationMark.SetActive(true);
     }
 
     private void InventoryUI_OnLootItemInventoryUpdated(Dictionary<ItemSO, int> dict)
@@ -58,6 +69,9 @@ public class InventoryUI : MonoBehaviour
                 itemSlot.SetCanvas(canvas);
             }
         }
+
+        //inform the player about new item
+        exclamationMark.SetActive(true);
     }
 
 
@@ -78,12 +92,22 @@ public class InventoryUI : MonoBehaviour
 
     public void Open_Close_Inventory()
     {
+        exclamationMark.SetActive(false);
+        SoundEffectManager.Instance.PlayButtonClickSF();
         //if object is not active, make it active or vice versa
         inventory.SetActive(!inventory.activeSelf);
     }
 
+    private void InventoryUI_GoldCoinUpdate(int totalCoin)
+    {
+        goldCoinText.text = totalCoin.ToString();
+    }
+
     private void OnEnable()
     {
+        InventoryUI_GoldCoinUpdate(GoldCoinManager.Instance.GoldCoinAmount);
+
+        #region Events
         EventManager<Dictionary<ItemSO, int>>
             .Subscribe(EventKey.LootItem_Inventory_Update, InventoryUI_OnLootItemInventoryUpdated);
 
@@ -91,6 +115,9 @@ public class InventoryUI : MonoBehaviour
             .Subscribe(EventKey.Staff_Inventory_Update, InventoryUI_OnStaffInventoryUpdated);
 
         EventManager<ItemSO>.Subscribe(EventKey.Equipped_Staff_Changed, InventoryUI_OnEquippedStaffChanged);
+
+        EventManager<int>.Subscribe(EventKey.Gold_Coin_Update, InventoryUI_GoldCoinUpdate);
+        #endregion Events
     }
 
 
@@ -103,5 +130,9 @@ public class InventoryUI : MonoBehaviour
             .Unsubscribe(EventKey.Staff_Inventory_Update, InventoryUI_OnStaffInventoryUpdated);
 
         EventManager<ItemSO>.Unsubscribe(EventKey.Equipped_Staff_Changed, InventoryUI_OnEquippedStaffChanged);
+
+        EventManager<int>.Unsubscribe(EventKey.Gold_Coin_Update, InventoryUI_GoldCoinUpdate);
     }
+
+
 }

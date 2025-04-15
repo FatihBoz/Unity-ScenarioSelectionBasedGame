@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b1a98eb64d26d44f8738a83f8b57706, type: 3}
+  m_Name: 22.2 - 30.2 Create a wall of fire around forest
+  m_EditorClassIdentifier: 
+  narratorText: 'Many animals escape from the wall of fire and come
+
+    towards
+    you in the center, but they all seem to be
+
+    moving away from a large creature.'
+  cardText: 'Create a wall of
+
+    fire around forest'
+  backText: 'You make the
+
+    wall of fire
+
+    smaller and
+
+    smaller until
+
+    you
+    see its
+
+    range.'
+  image: {fileID: 21300000, guid: 94a455262a19852498359d41b02e2db8, type: 3}
+  nextOptions:
+  - {fileID: 11400000, guid: 4138fd59ade0cbf4f97f1c94758e40bb, type: 2}
+  - {fileID: 11400000, guid: 884354570d118e6448502c4c9d0b2246, type: 2}
+  rewardPrefab: {fileID: 6065419709317970287, guid: 79e5d141b12c56a458d3cc227b4d078e, type: 3}
+  location: 5
+  hasEnemy: 0
+  enemy: {fileID: 0}
+  lootItemType: 0
+  merchantEncounter: 0

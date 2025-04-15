@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b1a98eb64d26d44f8738a83f8b57706, type: 3}
+  m_Name: 4.2 - 5.2  Climb back into the cradle
+  m_EditorClassIdentifier: 
+  narratorText: 'Since you turned 7 years old, you will leave the main castle
+
+    for
+    training as a family tradition. Before you left, The Lord
+
+    summoned you for
+    the first time.'
+  cardText: 'Climb back
+
+    into the cradle'
+  backText: 'The guards
+
+    come and find
+
+    you asleep.
+
+    Your nanny is
+
+    executed
+    for
+
+    being a lunatic.'
+  image: {fileID: 21300000, guid: f6ed77d0ad1ce7a449f73f4ab2dd7465, type: 3}
+  nextOptions:
+  - {fileID: 11400000, guid: 75b361c00bc79b3408a46c218b033eb8, type: 2}
+  rewardPrefab: {fileID: 6065419709317970287, guid: 79e5d141b12c56a458d3cc227b4d078e, type: 3}
+  location: 1
+  hasEnemy: 0
+  enemy: {fileID: 0}
+  lootItemType: 0
+  merchantEncounter: 0

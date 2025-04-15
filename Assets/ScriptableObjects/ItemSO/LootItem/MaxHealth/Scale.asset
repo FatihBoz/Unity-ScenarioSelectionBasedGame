@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 589b1c72d37512943924120fe2e6e1a0, type: 3}
+  m_Name: Scale
+  m_EditorClassIdentifier: 
+  itemExplanation: 'Tough and resilient,
+
+    these reptilian scales
+
+    offer significant
+
+    protection.
+    Greatly
+
+    enhances your vitality.'
+  itemName: Scale
+  tier: 3
+  coinNeedToPurchase: 6
+  itemSprite: {fileID: 21300000, guid: 2163ce98cdb5812418962bf8e1e7c4b5, type: 3}
+  itemEffectPrefab: {fileID: 1490751515303795654, guid: 9f00c17d970ce2740a8b969b0138485a, type: 3}
+  itemType: 1

@@ -6,5 +6,6 @@ public class MaxHealthEffect : LootItemEffect
     public override void ApplyItemEffect(ItemSO item)
     {
         PlayerAttributes.Instance.IncreaseMaxHealth(baseMaxHealthBoosterValue * item.Tier);
+        FloatingTextManager.Instance.InstantiateFloatingText(FloatingTextType.Max_Health_Increased);
     }
 }

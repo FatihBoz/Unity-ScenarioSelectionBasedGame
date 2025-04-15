@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a1413265b5af4a4cab0e46a694ad6de, type: 3}
+  m_Name: DireWolf Copy 2
+  m_EditorClassIdentifier: 
+  interactions:
+  - element: 1
+    interactionType: 1
+  - element: 4
+    interactionType: 2
+  skills:
+  - {fileID: 11400000, guid: 0ab77ab5d2e643440ae3b5844c68bca4, type: 2}
+  - {fileID: 11400000, guid: 3c7d846dfb9034c4a91cb70143dcfb2d, type: 2}
+  lootItemDrop:
+  - {fileID: 11400000, guid: 421b8bf84a008c24fb3b998defb12aef, type: 2}
+  - {fileID: 11400000, guid: 3e2337c086d7b9442b30f5179a6c9cb7, type: 2}
+  maxHp: 90
+  maxMana: 20
+  manaRegenPerSecond: 6
+  manaPercentageThresholdForCombo: 0.7
+  defaultEnemyState: 0
+  timeBetweenSkillCastingInManaRecovery: 2
+  enemyInfo: 'Once a fearsome and
+
+    mighty being, now in a
+
+    miserable state.
+    But its
+
+    power is still frightening.'
+  _name: DireWolf
+  enemyLost: {fileID: 11400000, guid: b6f5869f211e21247ac05b7b622b4cfb, type: 2}
+  enemyWon: {fileID: 11400000, guid: 4af25b62997a881408db5a14cd37d128, type: 2}

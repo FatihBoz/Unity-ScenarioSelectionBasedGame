@@ -43,9 +43,9 @@ public class MiniGameStart : MiniGamePanel
 
     private void OnCombatStartButtonClicked()
     {
-
+        SoundEffectManager.Instance.PlayButtonClickSF();
         currentMiniGame = Instantiate(miniGamePrefab, canvas.transform);
-
+        EventManager<MiniGameStart>.TriggerEvent(EventKey.MiniGame_Finished, this);
         Image image = Instantiate(blackScreen, canvas.transform);
         //make black screen visible
         image.DOFade(1f, blackScreenVisibilityTime)
@@ -57,7 +57,7 @@ public class MiniGameStart : MiniGamePanel
         miniGame.SetActive(true);
         //assign enemy
         EventManager<EnemySO>.TriggerEvent(EventKey.ENEMY_FOUND, enemy);
-
+    
         panel.SetActive(false);
         //Make black screen invisible
         image.DOFade(0f, blackScreenVisibilityTime)

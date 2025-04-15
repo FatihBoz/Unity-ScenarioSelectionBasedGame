@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b1a98eb64d26d44f8738a83f8b57706, type: 3}
+  m_Name: 21.2-22.2 Burn it
+  m_EditorClassIdentifier: 
+  narratorText: "If there really is a direwolf in these forests, it must be moving
+    \naway from the fire. You can try to prevent it, or you can\nleave it as it is."
+  cardText: Burn it
+  backText: 'Fire is mankind''s
+
+    most powerful
+
+    weapon against
+
+    wild
+    nature.
+
+    Animals fear
+
+    fire, whether
+
+    they are
+
+    direwolves
+
+    or
+    not.'
+  image: {fileID: 21300000, guid: 425c340a48dbaee48af378cb75618683, type: 3}
+  nextOptions:
+  - {fileID: 11400000, guid: 599c729f34b42524b94233b79e65dcb0, type: 2}
+  - {fileID: 11400000, guid: a48a003dc42b5a4439b2f1daf65e6954, type: 2}
+  rewardPrefab: {fileID: 6065419709317970287, guid: 79e5d141b12c56a458d3cc227b4d078e, type: 3}
+  location: 5
+  hasEnemy: 0
+  enemy: {fileID: 0}
+  lootItemType: 0
+  merchantEncounter: 0

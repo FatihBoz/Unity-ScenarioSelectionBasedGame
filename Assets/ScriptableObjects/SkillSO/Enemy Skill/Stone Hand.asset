@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6a13b47caedd9242aa3ec8738b3d410, type: 3}
+  m_Name: Stone Hand
+  m_EditorClassIdentifier: 
+  skillName: Stone Hand
+  skillElement: 8
+  skillSprite: {fileID: 21300000, guid: 822b2be10d8e230429fc31e6b8e4ba2f, type: 3}
+  explosionPrefab: {fileID: 8572389379865160829, guid: 4cc5703e93f3aa24fae9981791d84920, type: 3}
+  manaToCast: 25
+  damage: 22
+  speed: 0.2

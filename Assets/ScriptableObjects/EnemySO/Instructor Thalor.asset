@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a1413265b5af4a4cab0e46a694ad6de, type: 3}
+  m_Name: Instructor Thalor
+  m_EditorClassIdentifier: 
+  interactions:
+  - element: 1
+    interactionType: 2
+  - element: 2
+    interactionType: 2
+  - element: 4
+    interactionType: 2
+  skills:
+  - {fileID: 11400000, guid: 0b1489272923883499a249183bc3f33b, type: 2}
+  - {fileID: 11400000, guid: 64549bfc605209a4397d5ffaf1649b77, type: 2}
+  - {fileID: 11400000, guid: 7a8cb5c3950f39f4aaff28a75585bfd0, type: 2}
+  - {fileID: 11400000, guid: ebdb938e70cd5dc4c9e9ffb800ccef57, type: 2}
+  lootItemDrop:
+  - {fileID: 11400000, guid: 96c7e568f34daf648a5f334394deacef, type: 2}
+  - {fileID: 11400000, guid: 6917d0559b414b14b869154d80cc9995, type: 2}
+  - {fileID: 11400000, guid: f80f54bceb37e8e4ba8b048af3c2a7cc, type: 2}
+  - {fileID: 11400000, guid: 5bcc6ff775c49ae4cbceb2ba9bb11f1f, type: 2}
+  maxHp: 65
+  maxMana: 40
+  manaRegenPerSecond: 8
+  manaPercentageThresholdForCombo: 0.7
+  defaultEnemyState: 0
+  timeBetweenSkillCastingInManaRecovery: 2
+  enemyInfo: 'A great sorcerer from
+
+    House Deymar. Fortunately,
+
+    he will
+    use very minimal
+
+    power against his
+
+    apprentices.'
+  _name: Instructor Thalor
+  enemyLost: {fileID: 11400000, guid: 8df5b12e010fffa4295214a6f2f20964, type: 2}
+  enemyWon: {fileID: 11400000, guid: 8df5b12e010fffa4295214a6f2f20964, type: 2}

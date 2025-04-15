@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b1a98eb64d26d44f8738a83f8b57706, type: 3}
+  m_Name: 21.2-22.3 Keep walking
+  m_EditorClassIdentifier: 
+  narratorText: 'You walk for quite a long time and you have found
+
+    no trace
+    of direwolf. Also the path seems to never end.'
+  cardText: Keep walking
+  backText: 'The forest remains
+
+    strangely silent.'
+  image: {fileID: -1305931812, guid: 82140363e71da6f40a4a493c4fe810c8, type: 3}
+  nextOptions:
+  - {fileID: 11400000, guid: d52b934eafe0cb74cac10856b7f09eaa, type: 2}
+  rewardPrefab: {fileID: 6065419709317970287, guid: 79e5d141b12c56a458d3cc227b4d078e, type: 3}
+  location: 5
+  hasEnemy: 0
+  enemy: {fileID: 0}
+  lootItemType: 0
+  merchantEncounter: 0

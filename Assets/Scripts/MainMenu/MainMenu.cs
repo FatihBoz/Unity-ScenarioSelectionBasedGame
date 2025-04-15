@@ -5,6 +5,7 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] private Button startButton;
     [SerializeField] private Button quitButton;
+    [SerializeField] private string sceneNameToLoad;
 
 
     private void Start()
@@ -15,7 +16,8 @@ public class MainMenu : MonoBehaviour
 
     void OnStartButtonClicked()
     {
-        SceneLoader.Instance.ChangeScene("GameplayScene");
+        SceneLoader.Instance.ChangeScene(sceneNameToLoad);
+        SoundEffectManager.Instance.PlayButtonClickSF();
     }
 
     void OnQuitButtonPressed()

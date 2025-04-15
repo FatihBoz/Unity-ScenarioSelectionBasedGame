@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b1a98eb64d26d44f8738a83f8b57706, type: 3}
+  m_Name: 12.1-13.2 Enter the ruined throne room
+  m_EditorClassIdentifier: 
+  narratorText: 'In the middle of the hall stands the great throne.
+
+    The traces
+    of blood on the floor attract
+
+    your attention.'
+  cardText: 'Enter the ruined
+
+    throne room'
+  backText: 'At the heart of
+
+    Kalethos lies the
+
+    abandoned throne
+
+    room.
+    The hall is
+
+    covered in cobwebs
+
+    and faded flags
+
+    hang limply on
+
+    the
+    walls.'
+  image: {fileID: 21300000, guid: 2a65a6e97bfb99c4ba2ed2f9fe5f398e, type: 3}
+  nextOptions:
+  - {fileID: 11400000, guid: 42336ae3f2e5b5a4ab8b72a96eb4437f, type: 2}
+  - {fileID: 11400000, guid: b5ef4e134b4ed684a99b0d85dbf98bfa, type: 2}
+  rewardPrefab: {fileID: 6065419709317970287, guid: 79e5d141b12c56a458d3cc227b4d078e, type: 3}
+  location: 3
+  hasEnemy: 0
+  enemy: {fileID: 0}
+  lootItemType: 0
+  merchantEncounter: 0

@@ -40,9 +40,14 @@ public class ItemSlot : MonoBehaviour
 
     private void MakeTooltipActive()
     {
+        print("current item:" + currentItem);
+        print("canvas:" + canvas);
+        print("tooltip is active" + tooltipIsActive);
+
         if (currentItem == null || canvas == null || tooltipIsActive) 
             return;
 
+        SoundEffectManager.Instance.PlayButtonClickSF();
 
         if (currentItem.ItemType == ItemType.Staff)
         {

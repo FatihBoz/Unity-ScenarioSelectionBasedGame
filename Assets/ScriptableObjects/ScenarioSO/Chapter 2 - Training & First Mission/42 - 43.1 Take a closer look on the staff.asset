@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b1a98eb64d26d44f8738a83f8b57706, type: 3}
+  m_Name: 42 - 43.1 Take a closer look on the staff
+  m_EditorClassIdentifier: 
+  narratorText: 'Bad thoughts are running through your head. What will
+
+    be your
+    next move?'
+  cardText: 'Take a closer
+
+    look on the staff'
+  backText: 'You approached
+
+    the staff and
+
+    studied it. You
+
+    wished it
+    was
+
+    yours.'
+  image: {fileID: 21300000, guid: 58c7e1638d88e254194e8b40ff3bf8c0, type: 3}
+  nextOptions:
+  - {fileID: 11400000, guid: 90795f1ca3887724196ba990ded31df9, type: 2}
+  - {fileID: 11400000, guid: a0bdf63387188f34b9f4b15f66c4c1a4, type: 2}
+  rewardPrefab: {fileID: 6065419709317970287, guid: 79e5d141b12c56a458d3cc227b4d078e, type: 3}
+  location: 5
+  hasEnemy: 0
+  enemy: {fileID: 0}
+  lootItemType: 0
+  merchantEncounter: 0

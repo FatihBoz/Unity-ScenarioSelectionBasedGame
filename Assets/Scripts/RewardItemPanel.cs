@@ -26,11 +26,13 @@ public class RewardItemPanel : MonoBehaviour
 
     public void OnDiscardButtonPressed()
     {
+        SoundEffectManager.Instance.PlayButtonClickSF();
         SetItemPanelInactive();
     }
 
     public void OnTakeButtonPressed()
-    {
+    {   
+        SoundEffectManager.Instance.PlayButtonClickSF();
         EventManager<ItemSO>.TriggerEvent(EventKey.ITEM_TAKEN, currentItem);
         SetItemPanelInactive();
     }

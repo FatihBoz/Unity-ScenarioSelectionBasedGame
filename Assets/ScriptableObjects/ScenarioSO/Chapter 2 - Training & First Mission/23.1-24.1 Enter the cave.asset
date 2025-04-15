@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b1a98eb64d26d44f8738a83f8b57706, type: 3}
+  m_Name: 23.1-24.1 Enter the cave
+  m_EditorClassIdentifier: 
+  narratorText: 'You moaned in pain as you fell. Some people
+
+    appeared at the
+    entrance of the cave. They seemed to
+
+    have heard your moaning. It seems you
+    found
+
+    the hunters.'
+  cardText: Enter the cave
+  backText: 'You are caught
+
+    in a trap set at
+
+    the entrance of
+
+    the cave
+    and
+
+    you fall into the
+
+    hole.'
+  image: {fileID: 21300000, guid: 4872551e2bc1b794a8f7488bff108055, type: 3}
+  nextOptions:
+  - {fileID: 11400000, guid: bcff53ed0d7cf8344a053d3e8f05fed5, type: 2}
+  - {fileID: 11400000, guid: 5599f697988873347a7d49759a2d55d5, type: 2}
+  rewardPrefab: {fileID: 728901149430219561, guid: 697e7f57e69c76148b74f3dfef6257b8, type: 3}
+  location: 5
+  hasEnemy: 0
+  enemy: {fileID: 0}
+  lootItemType: 0
+  merchantEncounter: 0

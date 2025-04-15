@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b1a98eb64d26d44f8738a83f8b57706, type: 3}
+  m_Name: 13-14.5.2 Target Dummy Won
+  m_EditorClassIdentifier: 
+  narratorText: 'You lost to a simple target puppet.
+
+    That''s... a bit disappointing.'
+  cardText: Lose
+  backText: You lost.
+  image: {fileID: 21300000, guid: f0327c9fc50d56c448ba27487e893f9a, type: 3}
+  nextOptions:
+  - {fileID: 11400000, guid: 87127eb6fe8d99149906332140c64aa3, type: 2}
+  rewardPrefab: {fileID: 728901149430219561, guid: 697e7f57e69c76148b74f3dfef6257b8, type: 3}
+  location: 3
+  hasEnemy: 0
+  enemy: {fileID: 0}
+  lootItemType: 0
+  merchantEncounter: 0

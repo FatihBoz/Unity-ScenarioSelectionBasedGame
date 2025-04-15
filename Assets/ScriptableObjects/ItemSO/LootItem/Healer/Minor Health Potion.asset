@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 589b1c72d37512943924120fe2e6e1a0, type: 3}
+  m_Name: Minor Health Potion
+  m_EditorClassIdentifier: 
+  itemExplanation: ' A basic potion that
+
+    restores a small amount
+
+    of health,
+    providing a
+
+    quick boost in times of
+
+    need.'
+  itemName: Minor Health Potion
+  tier: 1
+  coinNeedToPurchase: 1
+  itemSprite: {fileID: 21300000, guid: 63a0d2ad7ae87764b98508b2c889b049, type: 3}
+  itemEffectPrefab: {fileID: 6933510246538192267, guid: a128d681fd1d9ab48a52e0ffa5ba6515, type: 3}
+  itemType: 1

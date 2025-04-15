@@ -9,11 +9,11 @@ public class ElementalStrength
     public ElementalStrength()
     {
         //determines which element is stronger against which
-        elementStrengths.Add(Element.Fire, Element.Wind | Element.Wild);       // Fire over both Wind and Wild as an example
+        elementStrengths.Add(Element.Fire, Element.Wind);       // Fire over both Wind and Wild as an example
 
         elementStrengths.Add(Element.Water, Element.Fire);
 
-        elementStrengths.Add(Element.Wind, Element.Earth | Element.Physical);
+        elementStrengths.Add(Element.Wind, Element.Earth);
 
         elementStrengths.Add(Element.Earth, Element.Water | Element.Fire);
     }
@@ -41,6 +41,4 @@ public enum Element
     Water = 1 << 1,
     Wind = 1 << 2,
     Earth = 1 << 3,
-    Physical = 1 << 4,
-    Wild = 1 << 5
 }

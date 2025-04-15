@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b1a98eb64d26d44f8738a83f8b57706, type: 3}
+  m_Name: 24.2-26.2 Ask about the direwolf
+  m_EditorClassIdentifier: 
+  narratorText: 'You don''t know where to find your target and it is
+
+    getting
+    dark. What will you do?'
+  cardText: 'Ask about
+
+    the direwolf'
+  backText: 'They do not
+
+    know anything
+
+    about the
+
+    direwolf.'
+  image: {fileID: -1752471511, guid: 0e934b0d6345a6c489325331ab4bfab9, type: 3}
+  nextOptions:
+  - {fileID: 11400000, guid: 614c0fff100e6a446958c3c7cd28149c, type: 2}
+  - {fileID: 11400000, guid: 5599f697988873347a7d49759a2d55d5, type: 2}
+  rewardPrefab: {fileID: 6065419709317970287, guid: 79e5d141b12c56a458d3cc227b4d078e, type: 3}
+  location: 5
+  hasEnemy: 0
+  enemy: {fileID: 0}
+  lootItemType: 0
+  merchantEncounter: 0

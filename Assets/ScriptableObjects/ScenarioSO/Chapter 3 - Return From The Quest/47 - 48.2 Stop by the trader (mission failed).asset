@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b1a98eb64d26d44f8738a83f8b57706, type: 3}
+  m_Name: 47 - 48.2 Stop by the trader (mission failed)
+  m_EditorClassIdentifier: 
+  narratorText: 'It''s time to go back. Your failure will
+
+    ruin your family reputation.'
+  cardText: 'Stop by the
+
+    trader'
+  backText: 'Good choice.
+
+    After all, you
+
+    don''t meet trader
+
+    everywhere.'
+  image: {fileID: 21300000, guid: ed94f1593e05a624790aa75d122c300a, type: 3}
+  nextOptions:
+  - {fileID: 11400000, guid: bb5d0cbab67931945996f030556e918f, type: 2}
+  rewardPrefab: {fileID: 6065419709317970287, guid: 79e5d141b12c56a458d3cc227b4d078e, type: 3}
+  location: 4
+  hasEnemy: 0
+  enemy: {fileID: 0}
+  lootItemType: 0
+  merchantEncounter: 1

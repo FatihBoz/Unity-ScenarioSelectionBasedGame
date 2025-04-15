@@ -4,17 +4,26 @@ public class HealthReward : MonoBehaviour,IReward
 {
     [SerializeField] private float baseDamage = 20f;
     [SerializeField] private float damageScale = 2f;
-    
+    [SerializeField] private HealthRewardType type;
+
     public void GetReward()
     {
+        if (type == HealthRewardType.Increase)
+        {
+            EventManager<float>.TriggerEvent(EventKey.HEALTH_INCREASED, CalculateDamage());
+            FloatingTextManager.Instance.InstantiateFloatingText(FloatingTextType.Health_Increased);
+            return;
+        }
+
         if (CanNullified(StaffAttributes.Instance.NullifyChance)) // if the damage is nullified
         {
+            FloatingTextManager.Instance.InstantiateFloatingText(FloatingTextType.Damage_Nullified);
             return;
-            //todo:There will be an indicator shows that the damage was nullified
         }
 
 
         EventManager<float>.TriggerEvent(EventKey.HEALTH_DECREASED, CalculateReducedDamage()); //else take the damage
+        FloatingTextManager.Instance.InstantiateFloatingText(FloatingTextType.Health_Decreased);
     }
 
     private float CalculateDamage() => baseDamage + (damageScale * PlayerAttributes.Instance.Level); //Without considering damage reduction
@@ -27,4 +36,10 @@ public class HealthReward : MonoBehaviour,IReward
         return r < chance;
     }
 
+}
+
+public enum HealthRewardType
+{
+    Decrease,
+    Increase
 }

@@ -207,24 +207,40 @@ public class EnemyCombat : Combat
         }
     }
 
+
+
     private void EnemyCombat_OnEnemyFound(EnemySO enemySO)
     {
         enemy = enemySO;
     }
 
+
+
+    private void MiniGameEnding_OnMiniGameFinished(Combat combat)
+    {
+        if (combat is EnemyCombat)
+        {
+            EventManager<ScenarioSO>.TriggerEvent(EventKey.SELECT_SCENARIO, enemy.EnemyLostScenario);
+        }
+        else
+        {
+            EventManager<ScenarioSO>.TriggerEvent(EventKey.SELECT_SCENARIO, enemy.EnemyWonScenario);
+        }
+    }
+
     private void OnEnable()
     {
+        EventManager<Combat>.Subscribe(EventKey.MiniGame_Finished, MiniGameEnding_OnMiniGameFinished);
         EventManager<EnemySO>.Subscribe(EventKey.ENEMY_FOUND, EnemyCombat_OnEnemyFound);
         EventManager<Skill>.Subscribe(EventKey.MiniGameCombat_Enemy_TakeDamage, EnemyCombat_OnEnemyTakeDamage);
     }
 
     private void OnDisable()
     {
-
+        EventManager<Combat>.Unsubscribe(EventKey.MiniGame_Finished, MiniGameEnding_OnMiniGameFinished);
         EventManager<EnemySO>.Unsubscribe(EventKey.ENEMY_FOUND, EnemyCombat_OnEnemyFound);
         EventManager<Skill>.Unsubscribe(EventKey.MiniGameCombat_Enemy_TakeDamage, EnemyCombat_OnEnemyTakeDamage);
     }
-
 
 }
 

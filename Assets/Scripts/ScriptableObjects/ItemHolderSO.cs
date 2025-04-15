@@ -25,12 +25,16 @@ public class ItemHolderSO : ScriptableObject
         //Iterate through each item in the filtered items list
         foreach (var item in items)
         {
-            var lootItemEffect = item.ItemEffectPrefab.GetComponent<LootItemEffect>();
-            // If the LootItemEffect component exists and its type matches the one we are looking for
-            if (lootItemEffect != null && lootItemEffect.ItemEffectType == itemEffectType)
+           var itemEffectPrefab = item.ItemEffectPrefab;
+            if (itemEffectPrefab != null && itemEffectPrefab.TryGetComponent<LootItemEffect>(out var lootItemEffect))
             {
-                tempList.Add(item);
+                // If the LootItemEffect component exists and its type matches the one we are looking for
+                if (lootItemEffect != null && lootItemEffect.ItemEffectType == itemEffectType)
+                {
+                    tempList.Add(item);
+                }
             }
+
         }
 
         // if there is at least one element in the list
@@ -86,4 +90,5 @@ public enum LootItemEffectType
     Level,
     Healer,
     MaxHealth,
+    GoldCoin
 }

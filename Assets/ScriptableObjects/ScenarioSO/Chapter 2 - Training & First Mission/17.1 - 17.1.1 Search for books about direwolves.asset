@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b1a98eb64d26d44f8738a83f8b57706, type: 3}
+  m_Name: 17.1 - 17.1.1 Search for books about direwolves
+  m_EditorClassIdentifier: 
+  narratorText: 'You study the book, but it is very large. You only have time
+
+    to
+    look at specific chapters.'
+  cardText: 'Search for books
+
+    about direwolves'
+  backText: 'You found it
+
+    in one of the
+
+    shops. Shopkeeper
+
+    gave it
+    to you for
+
+    free.'
+  image: {fileID: -465690084, guid: affaa3c4f7aad1b498d2f00be2e044bc, type: 3}
+  nextOptions:
+  - {fileID: 11400000, guid: dc7ab35b051b46c44b72fb28db8cec0d, type: 2}
+  - {fileID: 11400000, guid: abc903ea0ce8d1544a527505a3370588, type: 2}
+  rewardPrefab: {fileID: 6065419709317970287, guid: 79e5d141b12c56a458d3cc227b4d078e, type: 3}
+  location: 4
+  hasEnemy: 0
+  enemy: {fileID: 0}
+  lootItemType: 0
+  merchantEncounter: 0

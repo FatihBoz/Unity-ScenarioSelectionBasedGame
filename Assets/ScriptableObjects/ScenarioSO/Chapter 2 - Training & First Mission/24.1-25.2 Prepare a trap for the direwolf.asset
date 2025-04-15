@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b1a98eb64d26d44f8738a83f8b57706, type: 3}
+  m_Name: 24.1-25.2 Prepare a trap for the direwolf
+  m_EditorClassIdentifier: 
+  narratorText: 'You decided the plan: While you hide in the hole, the
+
+    hunters
+    will lure the direwolf to the entrance of the cave.
+
+    You will emerge from
+    the hole and kill the direwolf
+
+    while it is focused on the hunters.'
+  cardText: 'Prepare a trap
+
+    for the direwolf'
+  backText: 'Although it is
+
+    not your job to
+
+    kill it, you can
+
+    get a
+    lot out
+
+    of killing him.'
+  image: {fileID: 21300000, guid: dc7f01a31930b234a9ad4c1bf2bc0cc0, type: 3}
+  nextOptions:
+  - {fileID: 11400000, guid: 42af7c1f85969ab4c9d1c9bb861cb3ac, type: 2}
+  - {fileID: 11400000, guid: 31f5e35d2c440a7468212fa117397e0a, type: 2}
+  rewardPrefab: {fileID: 6065419709317970287, guid: 79e5d141b12c56a458d3cc227b4d078e, type: 3}
+  location: 5
+  hasEnemy: 0
+  enemy: {fileID: 0}
+  lootItemType: 0
+  merchantEncounter: 0

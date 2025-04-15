@@ -6,7 +6,7 @@ public class MiniGameCombatManager : MonoBehaviour
 {
     public static MiniGameCombatManager Instance;
     //!Initially, queues were used, but since skills had different speeds,
-    //!it was necessary to dynamically sort them, so we turned to List.
+    //!it was necessary to dynamically sort them, so I turned to List.
     private List<SkillIcon> playerQ = new();
 
     private List<SkillIcon> enemyQ = new();
@@ -111,12 +111,10 @@ public class MiniGameCombatManager : MonoBehaviour
     {
         Vector2 size = rectTransform.rect.size;
 
-        // consider its scale
         Vector3 scale = rectTransform.lossyScale;
         size.x *= scale.x;
         size.y *= scale.y;
 
-        // Get coordinates in world space
         Vector2 position = rectTransform.TransformPoint(rectTransform.rect.position);
 
         return new Rect(position, size);

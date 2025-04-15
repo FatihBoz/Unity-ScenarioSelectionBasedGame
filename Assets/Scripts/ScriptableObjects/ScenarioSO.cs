@@ -21,6 +21,7 @@ public class ScenarioSO : ScriptableObject
     [SerializeField] private bool hasEnemy;
     [SerializeField] private EnemySO enemy;
     [SerializeField] private LootItemEffectType lootItemType; //if "None", means there is no item
+    [SerializeField] private bool merchantEncounter = false;
 
     #endregion OTHER
 
@@ -44,4 +45,6 @@ public class ScenarioSO : ScriptableObject
     public Sprite GetSprite() => image;
 
     public Location GetLocation() => location;
+
+    public bool IsMerchantEncounter() => merchantEncounter;
 }

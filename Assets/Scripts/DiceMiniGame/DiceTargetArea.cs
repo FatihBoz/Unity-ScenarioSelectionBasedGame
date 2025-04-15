@@ -7,9 +7,13 @@ using UnityEngine.UI;
 public class DiceTargetArea : MonoBehaviour,IDiceTarget, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private Image visibleTargetArea;
-    [SerializeField] private TextMeshProUGUI coinText;
     [SerializeField] private TextMeshProUGUI nameText;
     [SerializeField] private ItemSlot itemSlot;
+
+    [Header("*** CHANGEABLES ***")]
+    [SerializeField] private Button purchaseButton;
+    [SerializeField] private GameObject purchasedIcon;
+    [SerializeField] private TextMeshProUGUI coinText;
 
     private ItemSO currentItem;
     private int coinNeedToPurchase;
@@ -19,6 +23,7 @@ public class DiceTargetArea : MonoBehaviour,IDiceTarget, IPointerEnterHandler, I
     private void Start()
     {
         Initialize();
+        purchaseButton.onClick.AddListener(OnPurhcaseButtonClicked);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -38,15 +43,26 @@ public class DiceTargetArea : MonoBehaviour,IDiceTarget, IPointerEnterHandler, I
         }
     }
 
+
+    void OnPurhcaseButtonClicked()
+    {
+        SoundEffectManager.Instance.PlayButtonClickSF();
+        EventManager<ItemSO>.TriggerEvent(EventKey.ITEM_TAKEN, itemSlot.CurrentItem);
+        purchaseButton.gameObject.SetActive(false);
+        purchasedIcon.SetActive(true);
+    }
+
     public void PlaceDiceOnItem(int coinAmount)
     {
         coinNeedToPurchase -= coinAmount;
 
-
         if (coinNeedToPurchase <= 0)
         {
-            //item satýn alýnabilir olmalý
+            
             SetCoinText(0);
+
+            visibleTarget.gameObject.SetActive(false);
+            purchaseButton.gameObject.SetActive(true);
         }
         else
         {
@@ -57,7 +73,7 @@ public class DiceTargetArea : MonoBehaviour,IDiceTarget, IPointerEnterHandler, I
     void Initialize()
     {
         currentItem = itemSlot.CurrentItem;
-        coinNeedToPurchase = currentItem.CoinNeedToPurchase;
+        coinNeedToPurchase = currentItem.CoinNeedToPurchase; // burada hata verdi
         nameText.text = currentItem.ItemName;
         nameText.color = ItemQualityColor.Instance.GetColor(currentItem.ItemQuality);
 
@@ -69,6 +85,7 @@ public class DiceTargetArea : MonoBehaviour,IDiceTarget, IPointerEnterHandler, I
     {
         coinText.text = coinAmount.ToString();
     }
+
 
 
     public bool isInTargetArea => isInArea;

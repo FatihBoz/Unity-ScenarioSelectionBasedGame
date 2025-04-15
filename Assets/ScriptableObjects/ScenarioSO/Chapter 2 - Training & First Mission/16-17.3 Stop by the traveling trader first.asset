@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b1a98eb64d26d44f8738a83f8b57706, type: 3}
+  m_Name: 16-17.3 Stop by the traveling trader first
+  m_EditorClassIdentifier: 
+  narratorText: 'Traveling traders are rare and offer real good deals on items.
+
+    If
+    you come with more coins, you will return more profitable.'
+  cardText: 'Stop by the
+
+    traveling trader'
+  backText: 'It might be
+
+    good to buy
+
+    something to
+
+    support you
+
+    before
+    the mission.'
+  image: {fileID: 21300000, guid: ed94f1593e05a624790aa75d122c300a, type: 3}
+  nextOptions:
+  - {fileID: 11400000, guid: 779a2ef096add4542bc86a3b24cf7645, type: 2}
+  - {fileID: 11400000, guid: 9963db27b35772342884b33367f7682a, type: 2}
+  rewardPrefab: {fileID: 6065419709317970287, guid: 79e5d141b12c56a458d3cc227b4d078e, type: 3}
+  location: 4
+  hasEnemy: 0
+  enemy: {fileID: 0}
+  lootItemType: 0
+  merchantEncounter: 1

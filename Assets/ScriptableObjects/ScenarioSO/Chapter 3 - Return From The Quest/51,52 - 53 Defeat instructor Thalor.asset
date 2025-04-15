@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b1a98eb64d26d44f8738a83f8b57706, type: 3}
+  m_Name: 51,52 - 53 Defeat instructor Thalor
+  m_EditorClassIdentifier: 
+  narratorText: 
+  cardText: 'Defeat
+
+    instructor Thalor'
+  backText: 'Win and
+
+    go home.'
+  image: {fileID: 21300000, guid: b76d9a1fe23dc7d46a6910c6e2fae58a, type: 3}
+  nextOptions: []
+  rewardPrefab: {fileID: 6065419709317970287, guid: 79e5d141b12c56a458d3cc227b4d078e, type: 3}
+  location: 3
+  hasEnemy: 1
+  enemy: {fileID: 11400000, guid: dcce38e2f224c3a45a3cf78fa874906c, type: 2}
+  lootItemType: 0
+  merchantEncounter: 0

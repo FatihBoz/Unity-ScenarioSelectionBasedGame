@@ -7,6 +7,7 @@ public class HealerEffect : LootItemEffect
     public override void ApplyItemEffect(ItemSO item)
     {
         EventManager<float>.TriggerEvent(EventKey.HEALTH_INCREASED, (baseHealValue * item.Tier));
+        FloatingTextManager.Instance.InstantiateFloatingText(FloatingTextType.Health_Increased);
     }
 }
 

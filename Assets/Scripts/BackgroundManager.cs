@@ -8,6 +8,7 @@ public class BackgroundManager : MonoBehaviour
 
     [SerializeField] private Sprite[] backgroundImages;
     [SerializeField] private Image backgroundImage;
+    [SerializeField] private float maxFade = .75f;
 
     private readonly float visibilityTime = .75f; //Required time to make image visible
     private Location previousLocation;
@@ -32,7 +33,7 @@ public class BackgroundManager : MonoBehaviour
             backgroundImage.sprite = backgroundImages[(int)scenario.GetLocation() - 1]; //there is an additional "NONE"
 
             //Make new image visible slowly
-            backgroundImage.DOFade(1, visibilityTime);
+            backgroundImage.DOFade(maxFade, visibilityTime);
             //Update previous location
             previousLocation = scenario.GetLocation();
         }
@@ -59,6 +60,8 @@ public enum Location
 {
     NONE,
     FAMILY_HOUSE,
-    FOREST_ENTRY,
-    FOREST_RUINS
+    ONWAY,
+    KALETHOS,
+    VILLAGE,
+    FOREST
 }

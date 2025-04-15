@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a1413265b5af4a4cab0e46a694ad6de, type: 3}
+  m_Name: Target Dummy
+  m_EditorClassIdentifier: 
+  interactions: []
+  skills:
+  - {fileID: 11400000, guid: 6b1edfd140591064fac14b372b4eeca8, type: 2}
+  - {fileID: 11400000, guid: 32747b80d449050439a4b3169609b94f, type: 2}
+  - {fileID: 11400000, guid: 7a9eb56d44fd42e41b808257b0125391, type: 2}
+  - {fileID: 11400000, guid: 9c59426969e3f4047869285d101cf1e5, type: 2}
+  lootItemDrop:
+  - {fileID: 11400000, guid: 972a9263a2e5d8a44967437ff40e57e9, type: 2}
+  - {fileID: 11400000, guid: 2416bf6f889104a4fbd5729f51a02b38, type: 2}
+  - {fileID: 11400000, guid: 411b1ec652a553b4ea49c760eee040c7, type: 2}
+  maxHp: 70
+  maxMana: 20
+  manaRegenPerSecond: 8
+  manaPercentageThresholdForCombo: 1
+  defaultEnemyState: 1
+  timeBetweenSkillCastingInManaRecovery: 2
+  enemyInfo: "A low-level magical target\ndummy, perfect for new \nmagicians to practice
+    with."
+  _name: Target Dummy
+  enemyLost: {fileID: 11400000, guid: 5cf15a30b42a0c14eba47aa475bbed33, type: 2}
+  enemyWon: {fileID: 11400000, guid: c3ce0679ee60cd94098fcb16705c1bd4, type: 2}

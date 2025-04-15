@@ -32,6 +32,14 @@ public class EnemySO : ScriptableObject
 
     [SerializeField] private string _name;
 
+    [Header("SCENARIOS")]
+
+    [SerializeField] private ScenarioSO enemyLost;  //Scenario to be triggered when enemy is defeated
+
+    [SerializeField] private ScenarioSO enemyWon;   //Scenario to be triggered when player is defeated
+
+
+
 
     public bool IsWeakTo(Element element)
     {
@@ -68,6 +76,10 @@ public class EnemySO : ScriptableObject
     public EnemyState DefaultEnemyState { get => defaultEnemyState;}
 
     public float TimeBetweenSkillCastingInManaRecovery { get => timeBetweenSkillCastingInManaRecovery;}
+
+    public ScenarioSO EnemyLostScenario { get => enemyLost; }
+    
+    public ScenarioSO EnemyWonScenario { get => enemyWon; }
 }
 
 

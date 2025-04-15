@@ -10,6 +10,8 @@ public abstract class ItemTooltip : MonoBehaviour
     [Header("BUTTON")]
     [SerializeField] protected Button tooltipPrimaryButton;
     [SerializeField] protected Button tooltipDropButton;
+    [Header("PREFABS")]
+    [SerializeField] private GameObject floatingText;
 
     protected ItemSO currentItem;
     protected Button tooltipCloseButtonPanel;
@@ -55,9 +57,14 @@ public abstract class ItemTooltip : MonoBehaviour
 
     protected void OnItemDropButtonClicked()
     {
+        SoundEffectManager.Instance.PlayButtonClickSF();
         DestroyCloseButtonPanel();
         DropItem(currentItem);
     }
 
-    public abstract void OnPrimaryButtonClicked();
+    public virtual void OnPrimaryButtonClicked()
+    {
+        SoundEffectManager.Instance.PlayButtonClickSF();
+        Instantiate(floatingText, transform.position, Quaternion.identity);
+    }
 }

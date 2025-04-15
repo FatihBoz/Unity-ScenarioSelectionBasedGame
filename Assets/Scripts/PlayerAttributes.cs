@@ -16,6 +16,7 @@ public class PlayerAttributes : MonoBehaviour
     public float CurrentHp { get => currentHp;}
     public float DamageReduction { get => damageReduction;}  //as percentage, between 0-1
     public int Level { get => level;}
+
     public float MaxMana { get => maxMana;}
 
     private void Awake()
@@ -30,11 +31,6 @@ public class PlayerAttributes : MonoBehaviour
         currentHp = MaxHp;
     }
 
-
-    public void IncreaseMaxMana(float manaAmount)
-    {
-        maxMana += manaAmount;   
-    }
 
     public void LevelUp(int levelToUp)
     {
@@ -64,6 +60,7 @@ public class PlayerAttributes : MonoBehaviour
     public void PlayerAttributes_OnHealthDecreased(float damageAmount)
     {
         OnCurrentHealthChanged((-1) * damageAmount);
+        
         if (CurrentHp <= 0)
         {
             EventManager<PlayerAttributes>.TriggerEvent(EventKey.Player_Died, this);
@@ -79,6 +76,11 @@ public class PlayerAttributes : MonoBehaviour
     void OnCurrentHealthChanged(float amount)
     {
         currentHp += amount;
+
+        if (currentHp > maxHp)
+        {
+            currentHp = maxHp;
+        }
         EventManager<float>.TriggerEvent(EventKey.HEALTH_UI_CHANGED, (CurrentHp / MaxHp));
     }
 

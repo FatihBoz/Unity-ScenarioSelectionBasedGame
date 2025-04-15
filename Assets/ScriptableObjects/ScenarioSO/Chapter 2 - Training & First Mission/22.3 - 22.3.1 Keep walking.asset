@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b1a98eb64d26d44f8738a83f8b57706, type: 3}
+  m_Name: 22.3 - 22.3.1 Keep walking
+  m_EditorClassIdentifier: 
+  narratorText: 'After a while, you find yourself at the entrance of the forest.
+
+    The
+    right path looks like a strange magical labyrinth.'
+  cardText: Keep walking
+  backText: 'You feel like
+
+    you are going
+
+    back to where
+
+    you started.'
+  image: {fileID: -1305931812, guid: 82140363e71da6f40a4a493c4fe810c8, type: 3}
+  nextOptions:
+  - {fileID: 11400000, guid: 2c8eb4f0aea7c73408e1df18508c3f9a, type: 2}
+  rewardPrefab: {fileID: 6065419709317970287, guid: 79e5d141b12c56a458d3cc227b4d078e, type: 3}
+  location: 5
+  hasEnemy: 0
+  enemy: {fileID: 0}
+  lootItemType: 0
+  merchantEncounter: 0

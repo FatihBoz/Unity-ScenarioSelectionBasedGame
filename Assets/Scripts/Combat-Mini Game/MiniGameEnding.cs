@@ -24,18 +24,22 @@ public class MiniGameEnding : MiniGamePanel
 
     private void OnContinueButtonClicked()
     {
+        SoundEffectManager.Instance.PlayButtonClickSF();
         panel.SetActive(false);
     }
 
 
     private void MiniGameEnding_OnMiniGameFinished(Combat combat)
     {
+
+
         panel.SetActive(true);
         SetBackgroundImage();
 
         //if enemy lost
         if (combat is EnemyCombat enemyCombat)
         {
+
             //!winPanelPrefab.SetActive(true);
             //Gain random loot items
             for (int i = 0; i < Random.Range(minLootCount, maxLootCount +1); i++)
